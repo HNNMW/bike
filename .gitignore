@@ -5,3 +5,11 @@
 Homestead.json
 Homestead.yaml
 .env
+
+/public/typings
+/public/system-config.js*
+/public/app/**/*.js
+/public/app/**/*.map
+/public/node_modules
+/public/jspm_packages
+/public/bower_components

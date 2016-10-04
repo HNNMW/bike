@@ -11,10 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::any('{path?}', function()
+{
+    return view('index');
+})->where('path', '.+');
+
+//Route::get('/home', 'HomeController@index');
