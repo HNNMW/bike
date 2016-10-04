@@ -1,6 +1,15 @@
 import { Component } from '@angular/core';
+import {User} from "./model/user.model";
 @Component({
-    selector: 'my-app',
-    template: '<h1>My First Angular App</h1>'
+    selector: 'bike-app',
+    templateUrl: '/app/views/index.html'
 })
-export class AppComponent { }
+export class AppComponent {
+
+    testObject = new User();
+
+    public constructor() {
+
+    }
+
+}
