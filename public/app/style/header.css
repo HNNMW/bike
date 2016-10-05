@@ -1,0 +1,31 @@
+.header-container{
+    width: 100%;
+    background: #333333;
+    height: 50px;
+}
+.header-title{
+    float: left;
+    line-height: 50px;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    margin-left: 25px;
+}
+
+.header-item{
+    float: right;
+    font-size: 17px;
+    line-height: 50px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    width: 10%;
+    overflow: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header-item:hover{
+    font-size: 18px;
+}
