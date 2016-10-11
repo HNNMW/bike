@@ -1,0 +1,28 @@
+#gallery{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.gallery-item{
+    float: left;
+    width: 22vw;
+    height: 22vw;
+    /*border: 1px solid #000;*/
+    overflow: hidden;
+}
+
+.gallery-img{
+    cursor: pointer;
+    float: left;
+    width: 49vw;
+    margin-left: -12vw;
+    transition: 0.75s ease;
+}
+
+.gallery-img:hover{
+    width: 50vw;
+}
+
+.gallery-img:hover{
+    opacity: 0.5;
+}
