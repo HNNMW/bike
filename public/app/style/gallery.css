@@ -1,28 +1,29 @@
 #gallery{
-    width: 100%;
-    margin: 0 auto;
+    width: 100vw;
 }
-
 .gallery-item{
     float: left;
-    width: 22vw;
-    height: 22vw;
+    width: 25vw;
+    height: 25vw;
     /*border: 1px solid #000;*/
     overflow: hidden;
 }
 
 .gallery-img{
-    cursor: pointer;
-    float: left;
-    width: 49vw;
-    margin-left: -12vw;
+    max-height: 100%;
+    margin-left: -12.5vw;
     transition: 0.75s ease;
-}
+    cursor: pointer;
 
-.gallery-img:hover{
-    width: 50vw;
 }
 
 .gallery-img:hover{
     opacity: 0.5;
+    transition: 2.75s ease;
+    -webkit-transform: scale(1.15);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    transform: scale(1.25);
+    -ms-transform: scale(1.15);
+
 }

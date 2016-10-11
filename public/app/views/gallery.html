@@ -1,8 +1,5 @@
-<div class="container">
-  <h1>Gallery</h1>
-  <div id="gallery">
-    <div class="gallery-item" *ngFor="let image of images">
-      <img class="gallery-img" src="{{image.url}}" alt="{{image.title}}">
-    </div>
+<div id="gallery">
+  <div class="gallery-item" *ngFor="let image of images">
+    <img class="gallery-img" src="{{image.url}}" alt="{{image.title}}">
   </div>
 </div>
