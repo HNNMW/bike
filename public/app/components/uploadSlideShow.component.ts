@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import {FileUploader} from "ng2-file-upload/ng2-file-upload";
+import {FileUploader}   from 'ng2-file-upload';
+
+// const URL = '/api/';
+const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 
 @Component({
     selector: 'uploadSlideShow',
-    styleUrls: ['app/style/uploadSlideShow.css'],
-    templateUrl: '/app/views/uploadSlideShow.html',
+    templateUrl: '/app/views/uploadSlideShow.html'
 })
 export class UploadSlideShowComponent {
     public uploader:FileUploader = new FileUploader({url: URL});
