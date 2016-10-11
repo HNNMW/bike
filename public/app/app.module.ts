@@ -13,7 +13,8 @@ import {HomeComponent} from "./components/home.component";
     imports: [BrowserModule,
         RouterModule.forRoot([
             { path: '', component: HomeComponent },
-            { path: 'bikes', component: BikesComponent }
+            { path: 'bikes', component: BikesComponent },
+            { path: 'gallery', component: GalleryComponent }
         ])],
 
     declarations: [AppComponent, HeaderComponent, CarouselComponent, HomeComponent, BikesComponent, GalleryComponent],
