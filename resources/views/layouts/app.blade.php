@@ -42,7 +42,9 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    &nbsp;
+                    <li><a href="{{ url('/admin/sliders') }}">Sliders</a></li>
+                    <li><a href="{{ url('/admin/bikes') }}">Bikes</a></li>
+                    <li><a href="{{ url('/admin/galleries') }}">Galleries</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

@@ -11,15 +11,25 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
 Auth::routes();
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+
+    Route::get('/', 'AdminController@dashboard');
+
+    Route::group(['prefix' => 'bikes'], function () {
+        Route::get('/', 'BikeController@index');
+    });
+
+    // Catch all other routes and show home -- Remove later
+    Route::any('{path?}', function () {
+        return view('home');
+    });
+});
 
 Route::any('{path?}', function()
 {
     return view('index');
 })->where('path', '.+');
 
-//Route::get('/home', 'HomeController@index');

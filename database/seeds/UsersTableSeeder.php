@@ -15,6 +15,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'hnnmw',
             'email' => 'admin@hnnmw.nl',
             'password' => bcrypt('secret'),
+            'type' => 1
         ]);
     }
 }
