@@ -7,7 +7,7 @@
         <div class="bike-details" [ngClass]="{'pull-left': i%2 == 0}">
             <h2 class="bike-title">{{image.title}}</h2>
             <span class="bike-description">{{image.description}}</span>
-            <button class="bike-details-button">Check this bike out</button>
+            <button class="bike-details-button" [routerLink]="['/bike-details', image.id]">Check this bike out</button>
         </div>
     </div>
 </div>
