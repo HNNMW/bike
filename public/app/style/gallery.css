@@ -1,12 +1,22 @@
-#gallery{
-    width: 100vw;
+.gallery-container{
+    width: 100%;
+    position: absolute;
+    /*background-image: url(images/bakground-img.jpg);*/
+    background-color: #36393e;
+}
+
+.center-container{
+    width: 75%;
+    margin: auto;
 }
 .gallery-item{
     float: left;
-    width: 25vw;
-    height: 25vw;
-    /*border: 1px solid #000;*/
+    width: 24vw;
+    height: 24vw;
+    border: 1px solid gray;
     overflow: hidden;
+    margin-top: 3px;
+    margin-left: 3px;
 }
 
 .gallery-img{
@@ -14,7 +24,6 @@
     margin-left: -12.5vw;
     transition: 0.75s ease;
     cursor: pointer;
-
 }
 
 .gallery-img:hover{
@@ -26,4 +35,8 @@
     transform: scale(1.25);
     -ms-transform: scale(1.15);
 
+}
+
+.title{
+    color: #c1c4c9;
 }
