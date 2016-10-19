@@ -1,13 +1,13 @@
 .header-container{
     width: 100%;
-    background: #333333;
+    background: #2e3136;
+    color: #c1c4c9;
     height: 50px;
 }
 .header-title{
     float: left;
     line-height: 50px;
     font-size: 20px;
-    color: white;
     font-weight: 500;
     margin-left: 25px;
 }
@@ -17,7 +17,6 @@
     font-size: 17px;
     line-height: 50px;
     cursor: pointer;
-    color: white;
     text-align: center;
     width: 10%;
     overflow: hidden;

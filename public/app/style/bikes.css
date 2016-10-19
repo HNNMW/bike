@@ -1,0 +1,80 @@
+.bike-container{
+    width: 100%;
+    color: #c1c4c9;
+    background-image: url("images/bakground-img.jpg");
+    background-size: 100% 1500px;
+    opacity: .92;
+}
+
+.bike-img{
+    width:100%;
+    transition: 1s ease;
+}
+
+.bike-img:hover{
+    transform: scale(1.025);
+}
+
+.bike-details{
+    float: right;
+    width: 50%;
+    height: 300px;
+    position: relative;
+    opacity: .7;
+    background-color: #36393e;
+}
+
+.image-container{
+    width: 50%;
+    height: 300px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.bike-title{
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.bike-description{
+    width: 80%;
+    margin-left: 10%;
+    display: block;
+}
+
+.bike-details-button{
+    position: absolute;
+    bottom: 35px;
+    width: 185px;
+    margin-left: calc(50% - 92.5px);
+    background-color: transparent;
+    border: 5px solid #c1c4c9;
+    height: 60px;
+    transition: 0.5s ease;
+}
+
+.bike-details-button:hover{
+    background-color: #c1c4c9;
+    color: #333333;
+}
+
+/*Dit is een beetje vies, miss ooit nog veranderen*/
+@media screen and (max-width: 1330px) {
+    .bike-img{
+        height: 100%;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 675px) {
+    .image-container{
+        width: 100%;
+    }
+
+    .bike-details{
+        width: 100%;
+    }
+}
