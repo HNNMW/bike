@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 @section('content')
     <div class="container">
         <div class="row">
@@ -9,8 +9,6 @@
 
                     <div class="panel-body">
                       <h1>  All bikes </h1>
-
-
                         <div class="row">
                             <table class="table table-bordered">
                                 <thead>
@@ -18,14 +16,16 @@
                                       <th>id</th>
                                       <th>title</th>
                                       <th>description</th>
+                                      <th>sort</th>
                                     </tr>
                                 </thead>
                                 <tbody id="sortable">
                                 @foreach ($bikes as $bike)
-                                  <tr class="ui-state-default">
+                                  <tr id="{{ $bike->id }}" class="ui-state-default items">
                                     <td>{{ $bike->id }}</td>
                                     <td>{{ $bike->title }}</td>
                                     <td>{{ $bike->description }}</td>
+                                    <td>{{ $bike->sort }}</td>
                                   </tr>
                                 @endforeach
                                 </tbody>
@@ -36,10 +36,44 @@
             </div>
         </div>
     </div>
-    <script>
+    <!-- <script>
       $( function() {
         $( "#sortable" ).sortable();
         $( "#sortable" ).disableSelection();
       } );
+    </script> -->
+
+    <script>
+        $('#sortable').sortable({
+        items: '.items',
+        update: function (event, ui) {
+            var bike_order = $(this).sortable('toArray', {attribute: 'id'});
+            var jsondata = JSON.stringify(bike_order);
+
+            console.log(jsondata);
+            // POST to server using $.post or $.ajax
+            $.ajax({
+              data: {
+                  "bike_order": jsondata,
+              },
+              type: 'POST',
+              url: '/admin/bikes/updateSort'
+            }).done(function(data) {
+              console.log("Done");
+              console.log(data);
+            })
+        }
+    });
     </script>
+
+    <script>
+        $(document).ready(function () {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+      });
+    </script>
+
 @endsection

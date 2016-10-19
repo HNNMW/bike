@@ -17,12 +17,8 @@ class BikeController extends Controller
      */
     public function index()
     {
-        $bikes = Bike::all();
-        // var_dump($test);
-        // exit;
-
-        // return view('admin.bikes.index')->withBikes($bikes);
-          return view('admin.bikes.index', ['bikes' => $bikes]);
+        $bikes = Bike::orderBy('sort')->get();
+        return view('admin.bikes.index', ['bikes' => $bikes]);
     }
 
     /**
@@ -77,7 +73,37 @@ class BikeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+    }
+
+    /**
+     * Update the sort
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  Array with bikes on order
+     * @return \Illuminate\Http\Response
+     */
+    public function updateSort(Request $request)
+    {
+        $bike_order = $request->input('bike_order');
+        $bike_order = json_decode($bike_order);
+
+        // for ($i=0; $i < count($bike_order); $i++) {
+        //     $bike = Bike::find($bike_order[$i]);
+        //     $bike->sort = $i;
+        //     $bike->save();
+        // }
+        $index = 1;
+        foreach ($bike_order as $bikeId => $value) {
+
+             $id = (int) $value;
+              $bike = Bike::find($id);
+              $bike->sort = $index;
+              $bike->save();
+              $index++;
+        }
+
+        return "success";
     }
 
     /**
