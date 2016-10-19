@@ -30,7 +30,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     });
 });
 
-// Route::any('{path?}', function()
-// {
-//     return view('index');
-// })->where('path', '.+');
+Route::any('{path?}', function()
+{
+    return view('index');
+})->where('path', '.+');

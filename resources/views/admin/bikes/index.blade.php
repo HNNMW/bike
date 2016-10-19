@@ -16,7 +16,7 @@
                                       <th>id</th>
                                       <th>title</th>
                                       <th>description</th>
-                                      <th>sort</th>
+                                      <th></th>
                                     </tr>
                                 </thead>
                                 <tbody id="sortable">
@@ -25,7 +25,9 @@
                                     <td>{{ $bike->id }}</td>
                                     <td>{{ $bike->title }}</td>
                                     <td>{{ $bike->description }}</td>
-                                    <td>{{ $bike->sort }}</td>
+                                    <td>
+                                    <a href="/admin/bikes/update/{{ $bike->id }}"><span class="glyphicon glyphicon-edit"></span></a> | <a href="url"><span class="glyphicon glyphicon-trash"></a>
+                                    </td>
                                   </tr>
                                 @endforeach
                                 </tbody>
@@ -36,12 +38,7 @@
             </div>
         </div>
     </div>
-    <!-- <script>
-      $( function() {
-        $( "#sortable" ).sortable();
-        $( "#sortable" ).disableSelection();
-      } );
-    </script> -->
+
 
     <script>
         $('#sortable').sortable({
