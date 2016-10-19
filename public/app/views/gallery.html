@@ -1,8 +1,13 @@
 <div class="gallery-container">
+  <div class="bg"></div>
+
     <div class="center-container">
       <h1 class="title">Gallery</h1>
       <div class="gallery-item" *ngFor="let image of images">
-        <img class="gallery-img" src="{{image.url}}" alt="{{image.title}}">
+        <img class="gallery-img" src="{{image.url}}" alt="{{image.title}}" (click)="enlargeImage(image.url)">
       </div>
     </div>
+</div>
+<div class="enlarge-image"  [ngClass]="{'large-image': displayLargeImage}">
+  <img class="" src="{{enlargedImageUrl}}" alt="" class="largeimg">
 </div>
