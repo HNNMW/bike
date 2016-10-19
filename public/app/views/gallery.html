@@ -1,6 +1,5 @@
 <div class="gallery-container">
-  <div class="bg"></div>
-
+  <div class="bg" [ngClass]="{'faded-background': displayLargeImage}" (click)="closeImage()"></div>
     <div class="center-container">
       <h1 class="title">Gallery</h1>
       <div class="gallery-item" *ngFor="let image of images">
@@ -8,6 +7,7 @@
       </div>
     </div>
 </div>
-<div class="enlarge-image"  [ngClass]="{'large-image': displayLargeImage}">
+<div class="enlarge-image" [ngClass]="{'large-image': displayLargeImage}">
   <img class="" src="{{enlargedImageUrl}}" alt="" class="largeimg">
+  <div class="image-description"> testtesttest</div>
 </div>

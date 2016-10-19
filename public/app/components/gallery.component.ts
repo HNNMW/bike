@@ -20,6 +20,11 @@ export class GalleryComponent {
         this.displayLargeImage = true;
     }
 
+    public closeImage = function (){
+        this.displayLargeImage = false;
+        console.log("test");
+    }
+
 }
 
 var images: galleryImage[] = [
