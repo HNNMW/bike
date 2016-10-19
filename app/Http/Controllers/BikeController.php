@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Bike as Bike;
+use App\BikeImage as BikeImage;
 
 class BikeController extends Controller
 {
@@ -15,7 +17,12 @@ class BikeController extends Controller
      */
     public function index()
     {
-        return view('admin.bikes.index');
+        $bikes = Bike::all();
+        // var_dump($test);
+        // exit;
+
+        // return view('admin.bikes.index')->withBikes($bikes);
+          return view('admin.bikes.index', ['bikes' => $bikes]);
     }
 
     /**

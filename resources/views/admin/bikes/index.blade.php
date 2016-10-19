@@ -9,10 +9,13 @@
 
                     <div class="panel-body">
                         All bikes
+
+                        @foreach ($bikes as $bike)
+                          <p>This is bike: {{ $bike->title }}</p>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
-
