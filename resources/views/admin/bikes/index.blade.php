@@ -8,14 +8,49 @@
                     <div class="panel-heading">Bikes</div>
 
                     <div class="panel-body">
-                        All bikes
+                      <h1>  All bikes </h1>
 
-                        @foreach ($bikes as $bike)
-                          <p>This is bike: {{ $bike->title }}</p>
-                        @endforeach
+
+                        <!-- <div class="row">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                      <th>id</th>
+                                      <th>title</th>
+                                      <th>description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach ($bikes as $bike)
+                                  <tr>
+                                    <td>{{ $bike->id }}</td>
+                                    <td>{{ $bike->title }}</td>
+                                    <td>{{ $bike->description }}</td>
+                                  </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div> -->
+
+                        <ul id="sortable">
+                          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+                          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+                          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+                          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+                          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+                          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+                          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+                        </ul>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+      $( function() {
+        $( "#sortable" ).sortable();
+        $( "#sortable" ).disableSelection();
+      } );
+    </script>
 @endsection
