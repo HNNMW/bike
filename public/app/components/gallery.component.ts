@@ -11,7 +11,20 @@ import { galleryImage } from '../interfaces/galleryImage.interface';
 })
 
 export class GalleryComponent {
-      public images = images;
+    public images = images;
+    enlargedImageUrl : string;
+    displayLargeImage : boolean;
+
+    public enlargeImage = function (id){
+        this.enlargedImageUrl = id;
+        this.displayLargeImage = true;
+    }
+
+    public closeImage = function (){
+        this.displayLargeImage = false;
+        console.log("test");
+    }
+
 }
 
 var images: galleryImage[] = [
