@@ -1,11 +1,10 @@
 <?php
 
-use App\BikeImage;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBikeImagesTable extends Migration
+class AddForeignkeyBikeImage extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +13,8 @@ class CreateBikeImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('bike_images', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('url');
-            $table->integer('sort');
-            $table->unsignedInteger('bikeId');
+        Schema::table('bike_images', function (Blueprint $table) {
+            $table->foreign('bikeId')->references('id')->on('bikes')->onDelete('SET NULL');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateBikeImagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('bike_images');
+        Schema::table('bike_images', function (Blueprint $table) {
+//            $table->dropForeign('bikeId');
+        });
     }
 }

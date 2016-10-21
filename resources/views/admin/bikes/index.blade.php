@@ -26,7 +26,7 @@
                                     <td>{{ $bike->title }}</td>
                                     <td>{{ $bike->description }}</td>
                                     <td>
-                                    <a href="/admin/bikes/update/{{ $bike->id }}"><span class="glyphicon glyphicon-edit"></span></a> | <a href="url"><span class="glyphicon glyphicon-trash"></a>
+                                    <a href="{{ url('/admin/bikes/' . $bike->id . '/edit') }}"><span class="glyphicon glyphicon-edit"></span></a> | <a href="url"><span class="glyphicon glyphicon-trash"></a>
                                     </td>
                                   </tr>
                                 @endforeach

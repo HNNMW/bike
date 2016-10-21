@@ -20,8 +20,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::group(['prefix' => 'bikes'], function () {
         Route::get('/', 'BikeController@index');
-        Route::any('/updateSort', 'BikeController@updateSort');
-        Route::any('/update', 'BikeController@update');
+        Route::get('/updateSort', 'BikeController@updateSort');
+        Route::get('/{id}/edit', 'BikeController@edit');
+        Route::post('/{id}/update', 'BikeController@update');
     });
 
     // Catch all other routes and show home -- Remove later

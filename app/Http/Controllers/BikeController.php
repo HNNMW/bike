@@ -18,7 +18,7 @@ class BikeController extends Controller
     public function index()
     {
         $bikes = Bike::orderBy('sort')->get();
-        return view('admin.bikes.index', ['bikes' => $bikes]);
+        return view('admin.bikes.index')->with(compact('bikes'));
     }
 
     /**
@@ -61,7 +61,9 @@ class BikeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $bike = Bike::findOrFail($id);
+
+        return view('admin.bikes.edit')->with(compact('bike'));
     }
 
     /**
@@ -73,7 +75,12 @@ class BikeController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $bike = Bike::findOrFail($id);
 
+        if (!$bike->update($request->all())) {
+            return redirect('/admin/bikes/' . $id . '/edit')->with(['message' => 'Update failed']);
+        }
+        return redirect('/admin/bikes/');
     }
 
     /**

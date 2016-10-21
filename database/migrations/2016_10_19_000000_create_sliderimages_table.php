@@ -28,6 +28,6 @@ class CreateSliderImagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('sliderimage');
+        Schema::drop('slider_images');
     }
 }

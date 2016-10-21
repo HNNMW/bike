@@ -31,6 +31,6 @@ class CreateBikesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('bike');
+        Schema::drop('bikes');
     }
 }
