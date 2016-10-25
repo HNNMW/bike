@@ -8,6 +8,7 @@
                     <div class="panel-heading">Bikes</div>
 
                     <div class="panel-body">
+                        <a type="btn" href="{{ url('/admin/bikes/create') }}"><span class="glyphicon glyphicon-download"></a>
                       <h1>  All bikes </h1>
                         <div class="row">
                             <table class="table table-bordered">
@@ -26,7 +27,7 @@
                                     <td>{{ $bike->title }}</td>
                                     <td>{{ $bike->description }}</td>
                                     <td>
-                                    <a href="{{ url('/admin/bikes/' . $bike->id . '/edit') }}"><span class="glyphicon glyphicon-edit"></span></a> | <a href="url"><span class="glyphicon glyphicon-trash"></a>
+                                    <a href="{{ url('/admin/bikes/' . $bike->id . '/edit') }}"><span class="glyphicon glyphicon-edit"></span></a> | <a href="{{ url('/admin/bikes/' . $bike->id . '/destroy') }}"><span class="glyphicon glyphicon-trash"></a>
                                     </td>
                                   </tr>
                                 @endforeach

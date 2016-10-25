@@ -23,6 +23,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('/updateSort', 'BikeController@updateSort');
         Route::get('/{id}/edit', 'BikeController@edit');
         Route::post('/{id}/update', 'BikeController@update');
+        Route::get('/{id}/destroy', 'BikeController@destroy');
+        Route::get('/create', 'BikeController@create');
+        Route::post('/store', 'BikeController@store');
     });
 
     // Catch all other routes and show home -- Remove later
