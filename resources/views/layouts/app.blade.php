@@ -12,10 +12,9 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap-fileinput/css/fileinput.min.css">
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -87,6 +86,9 @@
     @yield('content')
 
     <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="/bower_components/bootstrap-fileinput/js/fileinput.min.js"></script>
     <script src="/js/app.js"></script>
 </body>
 </html>

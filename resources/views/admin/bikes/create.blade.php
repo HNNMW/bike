@@ -39,7 +39,7 @@
                                     Foto's
                                 </label>
                                 <div class="col-sm-10">
-                                    <input class="filestyle" multiple="true" name="images[]" type="file">
+                                    <input class="file" multiple="true" name="images[]" type="file">
 
                                 </div>
                                 </div>
