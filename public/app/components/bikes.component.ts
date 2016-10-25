@@ -10,6 +10,8 @@ import {bikeImage} from '../interfaces/bikeImage.interface'
 export class BikesComponent {
 
     public images = images;
+
+
 }
 
 var images: bikeImage[] = [

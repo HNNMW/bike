@@ -1,1 +1,5 @@
-<div>test</div>
+<div>
+    <div class="bike-item" *ngFor="let image of images; | orderBy : [order]" (click)="changeImage(image.id)">
+        id: {{image.id}}  order: {{image.order}}
+        </div>
+</div>

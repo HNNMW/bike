@@ -4,6 +4,7 @@
 export interface bikeImage {
     id: number;
     url: string;
-    description: string;
-    title: string;
+    description?: string;
+    title?: string;
+    order?: number;
 }

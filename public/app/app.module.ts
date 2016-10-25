@@ -8,6 +8,7 @@ import {BikesComponent} from "./components/bikes.component";
 import {HomeComponent} from "./components/home.component";
 import {GalleryComponent} from "./components/gallery.component";
 import {BikeDetailsComponent} from "./components/bikeDetails.component";
+import {OrderBy} from "./pipes/orderBy";
 
 
 @NgModule({
@@ -18,8 +19,7 @@ import {BikeDetailsComponent} from "./components/bikeDetails.component";
             { path: 'bike-details/:id', component: BikeDetailsComponent },
             { path: 'gallery', component: GalleryComponent }
         ])],
-
-    declarations: [AppComponent, HeaderComponent, CarouselComponent, HomeComponent, BikesComponent, GalleryComponent, BikeDetailsComponent],
+    declarations: [AppComponent, HeaderComponent, CarouselComponent, HomeComponent, BikesComponent, GalleryComponent, BikeDetailsComponent, OrderBy],
     bootstrap: [AppComponent]
 })
 

@@ -22,7 +22,6 @@ export class GalleryComponent {
 
     public closeImage = function (){
         this.displayLargeImage = false;
-        console.log("test");
     }
 
 }
