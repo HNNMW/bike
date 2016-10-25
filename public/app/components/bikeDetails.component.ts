@@ -9,7 +9,7 @@ import {bikeImage} from '../interfaces/bikeImage.interface'
 
 export class BikeDetailsComponent {
 
-    public images = images
+    public images = images;
 
     public changeImage = function (imageId) : void{
         var tempImage = images.find(i => i.order === 1);
