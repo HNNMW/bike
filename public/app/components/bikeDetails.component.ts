@@ -20,12 +20,17 @@ export class BikeDetailsComponent {
             }
         }
     }
+
+//     public changeImage = function (bikeImage : bikeImage) : void{
+//         images.find(i => i.order === 1).order = bikeImage.order;
+//         images.find(i => i.id === bikeImage.id).order = 1;
+//     }
 }
 
 var images: bikeImage[] = [
-    { "id" : 1, "url": "/images/bike2.jpg", order : 6},
-    { "id" : 2, "url": "/images/bike2.jpg", order : 2},
+    { "id" : 1, "url": "/images/bike2.jpg", order : 1},
+    { "id" : 2, "url": "/images/bike2.jpg", order : 7},
     { "id" : 3, "url": "/images/bike2.jpg", order : 3},
     { "id" : 4, "url": "/images/bike2.jpg", order : 4},
-    { "id" : 5, "url": "/images/bike2.jpg", order : 5}
+    { "id" : 5, "url": "/images/bike2.jpg", order : 6}
 ];

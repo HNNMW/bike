@@ -1,5 +1,4 @@
-<div>
-    <div class="bike-item" *ngFor="let image of images | orderBy : ['order']" (click)="changeImage(image.id)">
-        id: {{image.id}}  order: {{image.order}}
-        </div>
+<div class="bike-item-container">
+        <img src="{{image.url}}" *ngFor="let image of images | orderBy : ['order']" (click)="changeImage(image.id)" [ngClass]="{'main-image': image.order == 1, 'list-image' : image.order > 1}">
+
 </div>
