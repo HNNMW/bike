@@ -1,8 +1,8 @@
 /**
  * Created by Bob on 8-10-2016.
  */
-import { Component,  trigger, transition, style, animate, state } from '@angular/core';
-import { galleryImage } from '../interfaces/galleryImage.interface';
+import {Component} from '@angular/core';
+import {galleryImage} from '../interfaces/galleryImage.interface';
 
 @Component({
     selector: 'gallery',
@@ -14,31 +14,32 @@ import { galleryImage } from '../interfaces/galleryImage.interface';
 export class GalleryComponent {
     public images = images;
     selectedImage: galleryImage;
-    enlargedImageUrl : string;
-    displayLargeImage : boolean;
-    desc : string;
-    title : string;
+    displayLargeImage: boolean;
 
-    public enlargeImage = function (image : galleryImage ){
+    public enlargeImage = function (image: galleryImage) {
         this.selectedImage = image;
         this.displayLargeImage = true;
     }
 
-    public closeImage = function (){
+    public closeImage = function () {
         this.displayLargeImage = false;
     }
 
 }
 
 var images: galleryImage[] = [
-    { "url": "/images/bike2.jpg", title: "Dikke leipe bika", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum sit amet odio ullamcorper scelerisque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut quis nisl ligula. Etiam aliquam luctus nulla in euismod. Donec libero ipsum, posuere nec malesuada vitae, tempus euismod justo." },
-    { "url": "/images/bike2.jpg", title: "asd", description: "asd" },
-    { "url": "/images/bike2.jpg", title: "asd", description: "asd" },
-    { "url": "/images/bike2.jpg", title: "asd", description: "asd" },
-    { "url": "/images/bike2.jpg", title: "asd", description: "asd" },
-    { "url": "/images/bike2.jpg", title: "asd", description: "asd" },
-    { "url": "/images/bike2.jpg", title: "asd", description: "asd" },
-    { "url": "/images/bike2.jpg", title: "asd", description: "asd" },
-    { "url": "/images/bike2.jpg", title: "asd", description: "asd" },
-    { "url": "/images/bike2.jpg", title: "asd", description: "asd" }
+    {
+        url: "/images/bike2.jpg",
+        title: "Dikke leipe bika",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum sit amet odio ullamcorper scelerisque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut quis nisl ligula. Etiam aliquam luctus nulla in euismod. Donec libero ipsum, posuere nec malesuada vitae, tempus euismod justo."
+    },
+    {"url": "/images/bike2.jpg", title: "asd", description: "asd"},
+    {"url": "/images/bike2.jpg", title: "asd", description: "asd"},
+    {"url": "/images/bike2.jpg", title: "asd", description: "asd"},
+    {"url": "/images/bike2.jpg", title: "asd", description: "asd"},
+    {"url": "/images/bike2.jpg", title: "asd", description: "asd"},
+    {"url": "/images/bike2.jpg", title: "asd", description: "asd"},
+    {"url": "/images/bike2.jpg", title: "asd", description: "asd"},
+    {"url": "/images/bike2.jpg", title: "asd", description: "asd"},
+    {"url": "/images/bike2.jpg", title: "asd", description: "asd"}
 ];
