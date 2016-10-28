@@ -30,7 +30,7 @@ export class BikeDetailsComponent {
 var images: bikeImage[] = [
     { "id" : 1, "url": "/images/bike2.jpg", order : 1},
     { "id" : 2, "url": "/images/bike2.jpg", order : 7},
-    { "id" : 3, "url": "/images/bike2.jpg", order : 3},
+    { "id" : 3, "url": "/images/BMW-2-series.jpg", order : 3},
     { "id" : 4, "url": "/images/bike2.jpg", order : 4},
     { "id" : 5, "url": "/images/bike2.jpg", order : 6}
 ];

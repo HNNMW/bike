@@ -1,7 +1,7 @@
 
 <div class="bike-container">
     <div class="bike-item" *ngFor="let image of images; let i = index">
-        <div class="image-container">
+        <div class="image-container" [routerLink]="['/bike-details', image.id]">
             <img class="bike-img" src="{{image.url}}" alt="{{image.title}}">
         </div>
         <div class="bike-details" [ngClass]="{'pull-left': i%2 == 0}">
