@@ -1,13 +1,17 @@
 <div class="gallery-container">
-  <div class="bg" [ngClass]="{'faded-background': displayLargeImage}" (click)="closeImage()"></div>
+  <div class="background" [ngClass]="{'faded-background': displayLargeImage}" (click)="closeImage()"></div>
     <div class="center-container">
       <h1 class="title">Gallery</h1>
       <div class="gallery-item" *ngFor="let image of images">
-        <img class="gallery-img" src="{{image.url}}" alt="{{image.title}}" (click)="enlargeImage(image.url)">
+        <img class="gallery-image" src="{{image.url}}" alt="{{image.title}}" (click)="enlargeImage(image)">
       </div>
     </div>
 </div>
-<div class="enlarge-image" [ngClass]="{'large-image': displayLargeImage}">
-  <img class="" src="{{enlargedImageUrl}}" alt="" class="largeimg">
-  <div class="image-description"> testtesttest</div>
+
+<div class="enlarged-image" *ngIf="displayLargeImage">
+    <img class="large-image" src="{{selectedImage.url}}" alt="{{selectedImage.title}}">
+    <div class="image-description" >
+        <h3 class="image-title">{{selectedImage.title}}</h3>
+        <div class="image-description-text">{{selectedImage.description}}</div>
+    </div>
 </div>
