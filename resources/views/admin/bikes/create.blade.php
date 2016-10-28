@@ -39,7 +39,9 @@
                                     Foto's
                                 </label>
                                 <div class="col-sm-10">
-                                    <input class="file" multiple="true" name="images[]" type="file">
+                                    {{--<input class="file" multiple="true" name="images[]" type="file">--}}
+                                    <label class="control-label">Select File</label>
+                                    <input id="input-2" name="images[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true">
 
                                 </div>
                                 </div>

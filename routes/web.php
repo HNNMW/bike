@@ -27,6 +27,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('/create', 'BikeController@create');
         Route::post('/store', 'BikeController@store');
     });
+    Route::group(['prefix' => 'sliders'], function () {
+        Route::get('/', 'SliderController@index');
+        Route::get('/updateSort', 'SliderController@updateSort');
+        Route::post('/{id}/update', 'SliderController@update');
+        Route::get('/{id}/destroy', 'SliderController@destroy');
+        Route::post('/store', 'SliderController@store');
+    });
 
     // Catch all other routes and show home -- Remove later
     Route::any('{path?}', function () {

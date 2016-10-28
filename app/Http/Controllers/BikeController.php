@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 use App\Bike as Bike;
 use App\BikeImage as BikeImage;
 
@@ -34,16 +33,14 @@ class BikeController extends Controller
     public function store(Request $request)
     {
         $date = date('his', time());
-
         $bike_images = $request->file('images');
 
         $bike = new Bike;
         $bike->title = $request->input('title');
         $bike->description = $request->input('description');
         $bike->save();
-        $i = 1;
 
-        foreach($bike_images as $bike_image) {
+        foreach($bike_images as $bike_image => $value) {
 
             $imageName = $bike_image->getClientOriginalName();
 
@@ -57,9 +54,8 @@ class BikeController extends Controller
             $bikeImage = new BikeImage;
             $bikeImage->url = 'public/images/bikeImages/'.$imageName;
             $bikeImage->bikeId = $bike->id;
-            $bikeImage->sort = $i;
+            $bikeImage->sort = $value;
             $bikeImage->save();
-            $i++;
         }
         $bikes = Bike::orderBy('sort')->get();
         return view('admin.bikes.index')->with(compact('bikes'));
