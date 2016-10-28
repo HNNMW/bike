@@ -10,7 +10,7 @@
                     <div class="panel-body">
 
                         <form class="form-horizontal" action="{{ url('/admin/bikes/store') }}"
-                        method="POST" enctype="multipart/form-data">
+                              method="POST" enctype="multipart/form-data">
 
                             {{ csrf_field() }}
 
@@ -44,7 +44,7 @@
                                     <input id="input-2" name="images[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true">
 
                                 </div>
-                                </div>
+                            </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-2">
                                     <input type="submit" class="btn btn-primary" value="Maak">

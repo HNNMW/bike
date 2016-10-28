@@ -34,6 +34,15 @@
                                               name="description">{{ $bike->description }}</textarea>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="images" class="control-label col-sm-2">
+                                    Foto's
+                                </label>
+                                <div class="col-sm-10">
+                                    <input class="file" multiple="true" name="images[]" type="file">
+
+                                </div>
+                            </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2">
