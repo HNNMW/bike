@@ -6,8 +6,9 @@
     font-family: "Copperplate Gothic Bold";
     position: fixed;
     z-index: 2;
-    opacity: .3;
+    opacity: 1;
     transition: 0.5s;
+    top: 0;
 }
 
 .header-container:hover{
@@ -42,4 +43,12 @@
 .header-item:hover{
     font-size: 18px;
     color: #dee1e6;
+}
+
+.hidden-header {
+    opacity: 0;
+}
+
+.hidden-header:hover {
+    opacity: 1;
 }

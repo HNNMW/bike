@@ -3,6 +3,7 @@
     position: absolute;
     z-index: 1;
     opacity: 0.92;
+    margin-top: 50px;
 }
 
 .gallery-container::before{
