@@ -20,11 +20,6 @@ export class BikeDetailsComponent {
             }
         }
     }
-
-//     public changeImage = function (bikeImage : bikeImage) : void{
-//         images.find(i => i.order === 1).order = bikeImage.order;
-//         images.find(i => i.id === bikeImage.id).order = 1;
-//     }
 }
 
 var images: bikeImage[] = [

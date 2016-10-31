@@ -64,6 +64,7 @@
 
 .title{
     color: #c1c4c9;
+    font-family: "Copperplate Gothic Bold";
 }
 
 .enlarged-image{
@@ -96,7 +97,7 @@
 }
 
 .image-title{
-    font-weight: 700;
+    font-family: "Copperplate Gothic Bold";
 }
 
 .image-description-text{

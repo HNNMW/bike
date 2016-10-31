@@ -1,0 +1,50 @@
+.footer-container{
+    height: 80px;
+    background-color: #2e3136;
+    width: 100%;
+    color: #c1c4c9;
+    text-align: center;
+}
+
+.footer-container a{
+    color: #c1c4c9;
+    text-decoration: none;
+}
+
+.footer-area{
+    width: 25%;
+    float: left;
+    height: 100%;
+}
+
+.footer-title {
+    font-family: copperplate;
+    padding-bottom: 3px;
+    margin-top: 3px;
+    font-weight: 700;
+}
+
+.footer-text{
+    width: 100%;
+    float: left;
+}
+
+.footer-text .fa{
+    padding-right: 10px;
+}
+
+
+.social-media-icon{
+    font-size: 35px;
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 0;
+    padding: 0 !important;
+}
+
+.social-media-icon:hover{
+    font-size: 38px;
+    color: white;
+}
