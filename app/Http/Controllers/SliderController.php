@@ -31,15 +31,15 @@ class SliderController extends Controller
 
             $imageName = $value->getClientOriginalName();
 
-            if (File::exists('public/images/sliderImages/'.$imageName)){
+            if (File::exists('images/sliderImages/'.$imageName)){
                 $imageName = $date . $value->getClientOriginalName();
             }
 
             $value->move(
-                'public/images/sliderImages/', $imageName
+                'images/sliderImages/', $imageName
             );
             $slider_image = new SliderImage();
-            $slider_image->url = 'public/images/bikeImages/'.$imageName;
+            $slider_image->url = 'images/sliderImages/'.$imageName;
             $slider_image->sort = 0;
             $slider_image->save();
         }

@@ -23,7 +23,7 @@
                                     <input class="file" multiple="true" name="images[]" type="file">
                                     {{--<label class="control-label">Select File</label>--}}
                                     {{--<input id="input-2" name="images[]" type="file" class="file" multiple--}}
-                                           {{--data-show-upload="false" data-show-caption="true">--}}
+                                    {{--data-show-upload="false" data-show-caption="true">--}}
 
                                 </div>
                             </div>
@@ -42,10 +42,11 @@
                                 <tbody id="sortable">
                                 @foreach ($slider_images as $slider_image)
                                     <tr id="{{ $slider_image->id }}" class="ui-state-default items">
-                                    <td>{{ $slider_image->id }}</td>
-                                    <td><a href="{{ url('/admin/sliders/' . $slider_image->id . '/destroy') }}"><span
-                                                    class="glyphicon glyphicon-trash"></a>
-                                    </td>
+                                        <td><img src="{{ url( $slider_image->url )}}" alt="" border=3 height=100 width=150></img></td>
+                                        <td>
+                                            <a href="{{ url('/admin/sliders/' . $slider_image->id . '/destroy') }}"><span
+                                                        class="glyphicon glyphicon-trash"></a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

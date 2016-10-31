@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Bike as Bike;
 use App\BikeImage as BikeImage;
-
+use Illuminate\Support\Facades\File;
 class BikeController extends Controller
 {
     /**
@@ -40,35 +40,30 @@ class BikeController extends Controller
         $bike->description = $request->input('description');
         $bike->save();
 
-        foreach ($bike_images as $bike_image => $value) {
 
 
             if (!empty($bike_images)) {
 
-                foreach ($bike_images as $bike_image) {
+                foreach ($bike_images as $sort => $bike_image) {
 
 
                     $imageName = $bike_image->getClientOriginalName();
 
-                    if (File::exists('public/images/bikeImages/' . $imageName)) {
+                    if (File::exists('images/bikeImages/' . $imageName)) {
                         $imageName = time() . $bike_image->getClientOriginalName();
                     }
 
                     $bike_image->move(
-                        'public/images/bikeImages/', $imageName
+                        'images/bikeImages/', $imageName
                     );
                     $bikeImage = new BikeImage;
-                    $bikeImage->url = 'public/images/bikeImages/' . $imageName;
+                    $bikeImage->url = 'images/bikeImages/' . $imageName;
                     $bikeImage->bikeId = $bike->id;
-                    $bikeImage->sort = $value;
+                    $bikeImage->sort = $sort;
                     $bikeImage->save();
 
                 }
             }
-        }
-    
-
-
 
         $bikes = Bike::orderBy('sort')->get();
         return view('admin.bikes.index')->with(compact('bikes'));
@@ -146,23 +141,24 @@ class BikeController extends Controller
      * @param  Array with bikes on order
      * @return \Illuminate\Http\Response
      */
-    public function updateSort(Request $request)
-    {
-        $bike_order = $request->input('bike_order');
-        $bike_order = json_decode($bike_order);
-
-        $index = 1;
-        foreach ($bike_order as $bikeId => $value) {
-
-            $id = (int)$value;
-            $bike = Bike::find($id);
-            $bike->sort = $index;
-            $bike->save();
-            $index++;
-        }
-
-        return "success";
-    }
+//    public function updateSort(Request $request)
+//    {
+//        $bike_order = $request->input('bike_order');
+//        $bike_order = json_decode($bike_order);
+//
+//        $index = 1;
+//
+//        foreach ($bike_order as $bikeId => $value) {
+//
+//            $id = (int)$value;
+//            $bike = Bike::find($id);
+//            $bike->sort = $bikeId;
+//            $bike->save();
+//            $index++;
+//        }
+//
+//        return 'test';
+//    }
 
     public function destroy($id)
     {

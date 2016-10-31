@@ -2,6 +2,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}"/>
 @section('content')
     <div class="container">
+
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
@@ -50,8 +51,6 @@
     <script>
         $(document).ready(function () {
 
-            whenAvailable('$.ui', function () {
-
                 $('#sortable').sortable({
                     items: '.items',
                     update: function (event, ui) {
@@ -65,14 +64,12 @@
                                 "bike_order": jsondata,
                             },
                             type: 'POST',
-                            url: '/admin/bikes/updateSort'
-                        }).done(function (data) {
-                            console.log("Done");
-                            console.log(data);
+                            url: '/admin/bikes/updateSort',
+
                         })
                     }
                 });
-            });
+
         });
     </script>
 
