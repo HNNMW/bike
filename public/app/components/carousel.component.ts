@@ -15,10 +15,10 @@ export class CarouselComponent {
 }
 
 var images: carouselImage[] = [
-    { "url": "/images/bike2.jpg" },
-    { "url": "/images/bike2.jpg" },
-    { "url": "/images/bike2.jpg" },
-    { "url": "/images/bike2.jpg" },
-    { "url": "/images/bike2.jpg" }
+    { "url": "/images/IMG_3370.jpg" },
+    { "url": "/images/IMG_3377.jpg" },
+    { "url": "/images/IMG_3619.jpg" },
+    { "url": "/images/IMG_3607.jpg" },
+    { "url": "/images/IMG_3564.jpg" }
 ];
 

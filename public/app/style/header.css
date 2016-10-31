@@ -3,6 +3,7 @@
     background: #2e3136;
     color: #c1c4c9;
     height: 50px;
+    font-family: "Copperplate Gothic Bold";
 }
 .header-title{
     float: left;
@@ -10,6 +11,7 @@
     font-size: 20px;
     font-weight: 500;
     margin-left: 25px;
+    font-size: 25px;
 }
 
 .header-item{
@@ -23,8 +25,13 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
 }
 
 .header-item:hover{
     font-size: 18px;
+    color: #dee1e6;
 }

@@ -22,6 +22,24 @@
     width:100%;
 }
 
+.carousel-title-text {
+    position: absolute;
+    color: white;
+    font-family: copperplate;
+    font-size: 125px;
+    width: 100%;
+    opacity: .5;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 1300px) {
+    .carousel-title-text{
+        font-size: 80px;
+    }
+}
+
 @keyframes carousel{
     0%    { left:0%; }
     11%   { left:0%; }

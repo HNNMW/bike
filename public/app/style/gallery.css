@@ -48,7 +48,7 @@
 
 .gallery-image{
     max-height: 100%;
-    margin-left: -12.5vw;
+    margin-left: -5.5vw;
     transition: 0.75s ease;
     cursor: pointer;
 }
@@ -70,10 +70,10 @@
     text-align: center;
     top: 50%;
     transform: translateY(-50%);
-    width: 70%;
+    width: 58%;
     position: fixed;
     z-index: 1;
-    margin-left: 15%;
+    margin-left: 20%;
 }
 
 .large-image{
