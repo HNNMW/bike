@@ -3,6 +3,7 @@
     <title>Angular QuickStart</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     <!-- 1. Load libraries -->
     <!-- Polyfill(s) for older browsers -->
