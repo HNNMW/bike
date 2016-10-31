@@ -34,12 +34,6 @@
     transform: translateY(-50%);
 }
 
-@media only screen and (max-width: 1300px) {
-    .carousel-title-text{
-        font-size: 80px;
-    }
-}
-
 .social-media-icon-container{
     position: absolute;
     color: white;
@@ -79,6 +73,22 @@
     font-size: 70px;
 }
 
+@media only screen and (max-width: 1300px) {
+    .carousel-title-text{
+        font-size: 80px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .social-media-icon-container{
+        display: none;
+    }
+
+    .carousel-title-text{
+        font-size: 40px;
+    }
+}
+
 @keyframes carousel{
     0%    { left:0%; }
     11%   { left:0%; }
@@ -98,4 +108,5 @@
     98.5% { left:-100%; }
     100%  { left:0%; }
 }
+
 
