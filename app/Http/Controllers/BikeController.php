@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-
+use App\Bike as Bike;
+use App\BikeImage as BikeImage;
+use Illuminate\Support\Facades\File;
 class BikeController extends Controller
 {
     /**
@@ -15,7 +15,8 @@ class BikeController extends Controller
      */
     public function index()
     {
-        return view('admin.bikes.index');
+        $bikes = Bike::orderBy('sort')->get();
+        return view('admin.bikes.index')->with(compact('bikes'));
     }
 
     /**
@@ -25,24 +26,53 @@ class BikeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.bikes.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $date = date('his', time());
+        $bike_images = $request->file('images');
+
+        $bike = new Bike;
+        $bike->title = $request->input('title');
+        $bike->description = $request->input('description');
+        $bike->save();
+
+
+
+            if (!empty($bike_images)) {
+
+                foreach ($bike_images as $sort => $bike_image) {
+
+
+                    $imageName = $bike_image->getClientOriginalName();
+
+                    if (File::exists('images/bikeImages/' . $imageName)) {
+                        $imageName = time() . $bike_image->getClientOriginalName();
+                    }
+
+                    $bike_image->move(
+                        'images/bikeImages/', $imageName
+                    );
+                    $bikeImage = new BikeImage;
+                    $bikeImage->url = 'images/bikeImages/' . $imageName;
+                    $bikeImage->bikeId = $bike->id;
+                    $bikeImage->sort = $sort;
+                    $bikeImage->save();
+
+                }
+            }
+
+        $bikes = Bike::orderBy('sort')->get();
+        return view('admin.bikes.index')->with(compact('bikes'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -53,34 +83,91 @@ class BikeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $bike = Bike::findOrFail($id);
+
+        return view('admin.bikes.edit')->with(compact('bike'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $bike = Bike::findOrFail($id);
+
+        if (!$bike->update($request->all())) {
+            return redirect('/admin/bikes/' . $id . '/edit')->with(['message' => 'Update failed']);
+        }
+
+        $images = $request->file('images');
+
+        if (!empty($images)) {
+            foreach ($images as $image) {
+
+                $name = $image->getClientOriginalName();
+
+                if (File::exists('public/images/bikeImages/' . $name)) {
+                    $name = time() . $image->getClientOriginalName();
+                }
+
+                $image->move(
+                    'public/images/bikeImages/', $name
+                );
+
+                $bikeImage = new BikeImage();
+                $bikeImage->url = 'public/images/bikeImages/' . $name;
+                $bikeImage->bikeId = $id;
+                $bikeImage->sort = 0;
+                $bikeImage->save();
+            }
+        }
+
+        return redirect('/admin/bikes/');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Update the sort
      *
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  Array with bikes on order
      * @return \Illuminate\Http\Response
      */
+//    public function updateSort(Request $request)
+//    {
+//        $bike_order = $request->input('bike_order');
+//        $bike_order = json_decode($bike_order);
+//
+//        $index = 1;
+//
+//        foreach ($bike_order as $bikeId => $value) {
+//
+//            $id = (int)$value;
+//            $bike = Bike::find($id);
+//            $bike->sort = $bikeId;
+//            $bike->save();
+//            $index++;
+//        }
+//
+//        return 'test';
+//    }
+
     public function destroy($id)
     {
-        //
+        $bike = Bike::find($id);
+
+        $bike->delete();
+        BikeImage::where('bikeId', $id)->delete();
+        $bikes = Bike::orderBy('sort')->get();
+        return view('admin.bikes.index')->with(compact('bikes'));
+
     }
 }

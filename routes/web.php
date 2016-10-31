@@ -20,6 +20,26 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::group(['prefix' => 'bikes'], function () {
         Route::get('/', 'BikeController@index');
+        Route::get('/updateSort', 'BikeController@updateSort');
+        Route::get('/{id}/edit', 'BikeController@edit');
+        Route::post('/{id}/update', 'BikeController@update');
+        Route::get('/{id}/destroy', 'BikeController@destroy');
+        Route::get('/create', 'BikeController@create');
+        Route::post('/store', 'BikeController@store');
+    });
+    Route::group(['prefix' => 'sliders'], function () {
+        Route::get('/', 'SliderController@index');
+        Route::get('/updateSort', 'SliderController@updateSort');
+        Route::post('/{id}/update', 'SliderController@update');
+        Route::get('/{id}/destroy', 'SliderController@destroy');
+        Route::post('/store', 'SliderController@store');
+    });
+    Route::group(['prefix' => 'galleries'], function () {
+        Route::get('/', 'GalleryController@index');
+        Route::get('/updateSort', 'GalleryController@updateSort');
+        Route::post('/{id}/update', 'GalleryController@update');
+        Route::get('/{id}/destroy', 'GalleryController@destroy');
+        Route::post('/store', 'GalleryController@store');
     });
 
     // Catch all other routes and show home -- Remove later
@@ -32,4 +52,3 @@ Route::any('{path?}', function()
 {
     return view('index');
 })->where('path', '.+');
-

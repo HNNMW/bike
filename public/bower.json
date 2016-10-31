@@ -1,0 +1,17 @@
+{
+  "name": "bike-app",
+  "description": "",
+  "main": "",
+  "license": "ISC",
+  "homepage": "https://github.com/tomsnuvv/bike",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-fileinput": "^4.3.5"
+  }
+}

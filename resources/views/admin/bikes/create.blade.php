@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
 
-                        <form class="form-horizontal" action="{{ url('/admin/galleries/store') }}"
+                        <form class="form-horizontal" action="{{ url('/admin/bikes/store') }}"
                               method="POST" enctype="multipart/form-data">
 
                             {{ csrf_field() }}
@@ -36,17 +36,18 @@
                             </div>
                             <div class="form-group">
                                 <label for="images" class="control-label col-sm-2">
-                                    Foto
+                                    Foto's
                                 </label>
                                 <div class="col-sm-10">
-
-                                    <input id="input-2" name="image" type="file" class="file" data-show-upload="false" data-show-caption="true">
+                                    {{--<input class="file" multiple="true" name="images[]" type="file">--}}
+                                    <label class="control-label">Select File</label>
+                                    <input id="input-2" name="images[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true">
 
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-2">
-                                    <input type="submit" class="btn btn-primary" value="Upload">
+                                    <input type="submit" class="btn btn-primary" value="Maak">
                                 </div>
                             </div>
 
