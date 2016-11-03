@@ -17,8 +17,10 @@ export class GalleryComponent {
     displayLargeImage: boolean;
 
     public enlargeImage = function (image: galleryImage) {
-        this.selectedImage = image;
-        this.displayLargeImage = true;
+        if (window.innerWidth > 1024) {
+            this.selectedImage = image;
+            this.displayLargeImage = true;
+        }
     }
 
     public closeImage = function () {
@@ -33,7 +35,7 @@ var images: galleryImage[] = [
         title: "Dikke leipe bika",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum sit amet odio ullamcorper scelerisque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut quis nisl ligula. Etiam aliquam luctus nulla in euismod. Donec libero ipsum, posuere nec malesuada vitae, tempus euismod justo."
     },
-    {"url": "/images/IMG_3475.jpg", title: "asd", description: "asd"},
+    {"url": "/images/IMG_3475.jpg", title: "", description: ""},
     {"url": "/images/IMG_3377.jpg", title: "asd", description: "asd"},
     {"url": "/images/IMG_3386.jpg", title: "asd", description: "asd"},
     {"url": "/images/IMG_3393.jpg", title: "asd", description: "asd"},

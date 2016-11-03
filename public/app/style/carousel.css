@@ -79,6 +79,14 @@
     }
 }
 
+@media only screen and (max-width: 1024px) {
+    .social-media-icon:hover{
+        color: white !important;
+        font-size: 60px !important;
+    }
+}
+
+
 @media screen and (max-width: 750px) {
     .social-media-icon-container{
         display: none;

@@ -67,6 +67,11 @@
     .header-item {
         font-size: 13px;
     }
+
+    .header-item:hover {
+        font-size: 13px;
+        color: #dee1e6;
+    }
 }
 
 @media screen and (max-width: 725px) {
@@ -132,6 +137,5 @@
     .openDropdown {
         opacity: 1;
         visibility: visible;
-        cursor: default
     }
 }
