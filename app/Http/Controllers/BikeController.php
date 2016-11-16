@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Bike as Bike;
 use App\BikeImage as BikeImage;
 use Illuminate\Support\Facades\File;
+
 class BikeController extends Controller
 {
     /**
@@ -32,41 +33,39 @@ class BikeController extends Controller
 
     public function store(Request $request)
     {
-        $date = date('his', time());
         $bike_images = $request->file('images');
 
-        $bike = new Bike;
+        $bike = new Bike();
         $bike->title = $request->input('title');
         $bike->description = $request->input('description');
+        $bike->sort = 0;
         $bike->save();
 
 
+        if (!empty($bike_images)) {
 
-            if (!empty($bike_images)) {
-
-                foreach ($bike_images as $sort => $bike_image) {
+            foreach ($bike_images as $sort => $bike_image) {
 
 
-                    $imageName = $bike_image->getClientOriginalName();
+                $imageName = $bike_image->getClientOriginalName();
 
-                    if (File::exists('images/bikeImages/' . $imageName)) {
-                        $imageName = time() . $bike_image->getClientOriginalName();
-                    }
-
-                    $bike_image->move(
-                        'images/bikeImages/', $imageName
-                    );
-                    $bikeImage = new BikeImage;
-                    $bikeImage->url = 'images/bikeImages/' . $imageName;
-                    $bikeImage->bikeId = $bike->id;
-                    $bikeImage->sort = $sort;
-                    $bikeImage->save();
-
+                if (File::exists('images/bikeImages/' . $imageName)) {
+                    $imageName = time() . $bike_image->getClientOriginalName();
                 }
-            }
 
-        $bikes = Bike::orderBy('sort')->get();
-        return view('admin.bikes.index')->with(compact('bikes'));
+                $bike_image->move(
+                    'images/bikeImages/', $imageName
+                );
+                $bikeImage = new BikeImage;
+                $bikeImage->url = 'images/bikeImages/' . $imageName;
+                $bikeImage->bikeId = $bike->id;
+                $bikeImage->sort = $sort;
+                $bikeImage->save();
+
+            }
+        }
+
+        return redirect('admin/bikes');
     }
 
     /**

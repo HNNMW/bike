@@ -14,7 +14,7 @@ class AddForeignkeyBikeImage extends Migration
     public function up()
     {
         Schema::table('bike_images', function (Blueprint $table) {
-            $table->foreign('bikeId')->references('id')->on('bikes')->onDelete('SET NULL');
+            $table->foreign('bikeId')->references('id')->on('bikes')->onDelete('set null');
         });
     }
 
