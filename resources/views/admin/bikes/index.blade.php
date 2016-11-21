@@ -51,8 +51,16 @@
     <script>
         $(document).ready(function () {
 
+            var fixHelper = function (e, ui) {
+                ui.children().each(function () {
+                    $(this).width($(this).width());
+                });
+                return ui;
+            };
+
                 $('#sortable').sortable({
                     items: '.items',
+                    helper: fixHelper,
                     update: function (event, ui) {
                         var bike_order = $(this).sortable('toArray', {attribute: 'id'});
                         var jsondata = JSON.stringify(bike_order);

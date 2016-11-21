@@ -58,27 +58,37 @@
         </div>
     </div>
 
-
+@endsection
+@section('javascript')
     <script>
-        $('#sortable').sortable({
-            items: '.items',
-            update: function (event, ui) {
-                var bike_order = $(this).sortable('toArray', {attribute: 'id'});
-                var jsondata = JSON.stringify(bike_order);
+        $(document).ready(function () {
+            var fixHelper = function (e, ui) {
+                ui.children().each(function () {
+                    $(this).width($(this).width());
+                });
+                return ui;
+            };
 
-                console.log(jsondata);
-                // POST to server using $.post or $.ajax
-                $.ajax({
-                    data: {
-                        "bike_order": jsondata,
-                    },
-                    type: 'POST',
-                    url: '/admin/bikes/updateSort'
-                }).done(function (data) {
-                    console.log("Done");
-                    console.log(data);
-                })
-            }
+            $('#sortable').sortable({
+                helper: fixHelper,
+                items: '.items',
+                update: function (event, ui) {
+                    var slider_image_order = $(this).sortable('toArray', {attribute: 'id'});
+                    var jsondata = JSON.stringify(slider_image_order);
+
+                    console.log(jsondata);
+                    // POST to server using $.post or $.ajax
+                    $.ajax({
+                        data: {
+                            "slider_image_order": jsondata,
+                        },
+                        type: 'POST',
+                        url: '/admin/sliders/updateSort',
+
+                    })
+                }
+            });
+
         });
     </script>
 

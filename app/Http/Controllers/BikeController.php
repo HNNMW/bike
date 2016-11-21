@@ -40,8 +40,6 @@ class BikeController extends Controller
         $bike->description = $request->input('description');
         $bike->save();
 
-
-
             if (!empty($bike_images)) {
 
                 foreach ($bike_images as $sort => $bike_image) {

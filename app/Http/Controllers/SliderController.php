@@ -56,4 +56,24 @@ class SliderController extends Controller
         return view('admin.sliders.index')->with(compact('slider_images'));
 
     }
+    
+    public function updateSort(Request $request)
+    {
+        $slider_image_order = $request->input('slider_image_order');
+        $slider_image_order = json_decode($slider_image_order);
+
+        $index = 1;
+
+        foreach ($slider_image_order as $order => $value) {
+
+            $id = (int)$value;
+            $slider_image = SliderImage::find($id);
+            $slider_image->sort = $order;
+            $slider_image->save();
+            $index++;
+        }
+
+        return 'test';
+    }
+
 }

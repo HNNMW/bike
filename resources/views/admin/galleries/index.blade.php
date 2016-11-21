@@ -51,12 +51,75 @@
                             </div>
 
                         </form>
+    <div id="sortable">
+                            @foreach ($gallery_images as $gallery_image)
 
+                                    <div class="card sortable">
 
-                    </div>
+                                        <img class="img-fluid" src="{{url(  $gallery_image->url) }}" alt="Card image cap">
+
+                                        <div class="card-block">
+
+                                            <h4 class="card-title">{{ $gallery_image->title }}</h4>
+
+                                            <p class="card-text">{{ $gallery_image->description }}</p>
+                                            <a href="{{ url('/admin/bikes/' . $gallery_image->id . '/edit') }}"><span
+                                                        class="glyphicon glyphicon-edit"></span></a> | <a
+                                                    href="{{ url('/admin/bikes/' . $gallery_image->id . '/destroy') }}"><span
+                                                        class="glyphicon glyphicon-trash"></a>
+                                        </div>
+
+                                    </div>
+                            @endforeach
+</div>
+
+                    </>
                 </div>
             </div>
         </div>
     </div>
+    @endsection
+@section('javascript')
+    <script>
+        $(document).ready(function () {
 
+            var fixHelper = function (e, ui) {
+                ui.children().each(function () {
+                    $(this).width($(this).width());
+                });
+                return ui;
+            };
+
+            $('#sortable').sortable({
+                items: '.items',
+                helper: fixHelper,
+                update: function (event, ui) {
+                    var bike_order = $(this).sortable('toArray', {attribute: 'id'});
+                    var jsondata = JSON.stringify(bike_order);
+
+                    console.log(jsondata);
+                    // POST to server using $.post or $.ajax
+                    $.ajax({
+                        data: {
+                            "bike_order": jsondata,
+                        },
+                        type: 'POST',
+                        url: '/admin/bikes/updateSort',
+
+                    })
+                }
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        });
+    </script>
 @endsection
