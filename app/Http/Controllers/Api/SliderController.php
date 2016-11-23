@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\GalleryImage;
+use App\SliderImage;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class GalleryController extends Controller
+class SliderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $images = GalleryImage::orderBy('sort')->get();
+        $images = SliderImage::orderBy('sort')->get();
 
         return response()->json(['images' => $images]);
     }

@@ -23,8 +23,11 @@ Route::group(['namespace' => 'Api'], function () {
         Route::get('/', 'BikeController@index');
     });
 
-    Route::group(['prefix' => 'images'], function () {
+    Route::group(['prefix' => 'galleryimages'], function () {
         Route::get('/', 'GalleryController@index');
+    });
+    Route::group(['prefix' => 'sliderimages'], function () {
+        Route::get('/', 'SliderController@index');
     });
 
 });
