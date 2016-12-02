@@ -1,4 +1,4 @@
-.header-container{
+.header-container {
     width: 100%;
     background: #2e3136;
     color: #c1c4c9;
@@ -6,23 +6,26 @@
     font-family: "Copperplate Gothic Bold";
     position: fixed;
     z-index: 2;
-    opacity: .3;
+    opacity: 1;
     transition: 0.5s;
+    top: 0;
 }
 
-.header-container:hover{
+.header-container:hover {
     opacity: 1;
 }
-.header-title{
+
+.header-title {
     float: left;
     line-height: 50px;
     font-size: 20px;
     font-weight: 500;
     margin-left: 25px;
     font-size: 25px;
+    cursor: default;
 }
 
-.header-item{
+.header-item {
     float: right;
     font-size: 17px;
     line-height: 50px;
@@ -39,7 +42,100 @@
     -o-transition: 0.3s;
 }
 
-.header-item:hover{
+.header-item:hover {
     font-size: 18px;
     color: #dee1e6;
+}
+
+.hidden-header {
+    opacity: 0;
+}
+
+.hidden-header:hover {
+    opacity: 1;
+}
+
+.mobile-header-item {
+    display: none;
+}
+
+@media screen and (max-width: 1060px) {
+    .header-title {
+        font-size: 20px;
+    }
+
+    .header-item {
+        font-size: 13px;
+    }
+
+    .header-item:hover {
+        font-size: 13px;
+        color: #dee1e6;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    .header-item {
+        display: none;
+    }
+
+    .mobile-header-item {
+        display: block;
+        float: right;
+        font-size: 35px;
+        position: absolute;
+        margin-top: 7px;
+        right: 0px;
+    }
+
+    .mobile-header-item i{
+        cursor: pointer;
+        margin-right: 15px;
+    }
+
+    .dropdown {
+        font-size: 18px;
+        background-color: white;
+        width: 150px;
+        margin-top: 43px;
+        float: right;
+        margin-right: -55px;
+        opacity: 0;
+        visibility: hidden;
+        cursor: pointer;
+        transition: 0.7s;
+        -webkit-transition: 0.7s;
+        -moz-transition: 0.7s;
+        -o-transition: 0.7s;
+    }
+
+    .dropdown-item {
+        float: left;
+        width: 100%;
+        text-decoration: none;
+        padding-left: 10px;
+        color: #c1c4c9;
+        background-color: #2e3136;
+        display: table;
+        height: 35px;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -o-transition: 0.3s;
+    }
+
+    .dropdown-item span {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .dropdown-item:hover {
+        background-color: #c1c4c9;
+        color: #2e3136;
+    }
+
+    .openDropdown {
+        opacity: 1;
+        visibility: visible;
+    }
 }
