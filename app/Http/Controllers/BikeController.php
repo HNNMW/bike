@@ -113,16 +113,16 @@ class BikeController extends Controller
 
                 $name = $image->getClientOriginalName();
 
-                if (File::exists('public/images/bikeImages/' . $name)) {
+                if (File::exists('images/bikeImages/' . $name)) {
                     $name = time() . $image->getClientOriginalName();
                 }
 
                 $image->move(
-                    'public/images/bikeImages/', $name
+                    'images/bikeImages/', $name
                 );
 
                 $bikeImage = new BikeImage();
-                $bikeImage->url = 'public/images/bikeImages/' . $name;
+                $bikeImage->url = 'images/bikeImages/' . $name;
                 $bikeImage->bikeId = $id;
                 $bikeImage->sort = 0;
                 $bikeImage->save();

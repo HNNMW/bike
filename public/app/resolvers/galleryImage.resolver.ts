@@ -16,6 +16,6 @@ export class GalleryImageResolver implements Resolve<GalleryImage> {
 
     resolve(route: ActivatedRouteSnapshot,
             state: RouterStateSnapshot): Observable<any>|Promise<any>|any {
-        return this.http.get('http://localhost:8000/api/galleryimages').map((res: Response) => res.json());
+        return this.http.get('/api/galleryimages').map((res: Response) => res.json());
     }
 }

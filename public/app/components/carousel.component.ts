@@ -10,12 +10,16 @@ import {ActivatedRoute}   from '@angular/router';
     templateUrl: '/app/views/carousel.html',
 })
 export class CarouselComponent implements OnInit {
-    public sliderImages;
+    public images;
 
     constructor(private route: ActivatedRoute) {
     }
 
     ngOnInit() {
-        this.sliderImages = this.route.snapshot.data['sliderImage'];
+        this.images = this.route.snapshot.data['sliderImage'].images;
+    }
+
+    encode(object) {
+        return JSON.stringify(object.images);
     }
 }

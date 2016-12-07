@@ -16,6 +16,9 @@ export class BikeResolver implements Resolve<Bike> {
 
     resolve(route: ActivatedRouteSnapshot,
             state: RouterStateSnapshot): Observable<any>|Promise<any>|any {
-        return this.http.get('http://localhost:8000/api/bikes').map((res: Response) => res.json());
+        return this.http.get('/api/bikes').map((res: Response) => {
+            console.log(res.json());
+            return res.json();
+        });
     }
 }

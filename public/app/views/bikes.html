@@ -5,8 +5,8 @@
             <span class="bike-description">{{bike.description}}</span>
             <button class="bike-details-button" [routerLink]="['/bike-details', 1]">Check this bike out</button>
         </div>
-        <div class="image-container" [routerLink]="['/bike-details', image.id]">
-            <img class="bike-img" src="{{image.url}}" alt="{{image.title}}">
+        <div class="image-container" [routerLink]="['/bike-details', bike.id]">
+            <img class="bike-img" src="/{{ bike.images[0].url }}" alt="{{bike.title}}">
         </div>
     </div>
 </div>

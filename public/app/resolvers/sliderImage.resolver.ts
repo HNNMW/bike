@@ -16,6 +16,8 @@ export class SliderImageResolver implements Resolve<SliderImage> {
 
     resolve(route: ActivatedRouteSnapshot,
             state: RouterStateSnapshot): Observable<any>|Promise<any>|any {
-        return this.http.get('http://localhost:8000/api/sliderimages').map((res: Response) => res.json());
+        return this.http.get('/api/sliderimages').map((res: Response) =>  {
+            return res.json();
+        });
     }
 }
