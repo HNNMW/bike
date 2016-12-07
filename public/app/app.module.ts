@@ -15,7 +15,7 @@ import {HttpModule} from '@angular/http';
 import {BikeResolver} from "./resolvers/bike.resolver";
 import {SliderImageResolver} from "./resolvers/sliderImage.resolver";
 import {GalleryImageResolver} from "./resolvers/galleryImage.resolver";
-
+import {ContactComponent} from "./components/contact.component";
 
 @NgModule({
     imports: [BrowserModule, HttpModule,
@@ -38,7 +38,7 @@ import {GalleryImageResolver} from "./resolvers/galleryImage.resolver";
             }
         ])],
     providers: [BikeResolver, SliderImageResolver, GalleryImageResolver],
-    declarations: [AppComponent, HeaderComponent, CarouselComponent, HomeComponent, BikesComponent, GalleryComponent, BikeDetailsComponent, FooterComponent, AboutComponent, OrderBy],
+    declarations: [AppComponent, HeaderComponent, CarouselComponent, HomeComponent, BikesComponent, GalleryComponent, BikeDetailsComponent, FooterComponent, AboutComponent, OrderBy, ContactComponent],
     bootstrap: [AppComponent]
 })
 
