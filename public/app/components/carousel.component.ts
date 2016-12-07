@@ -16,10 +16,6 @@ export class CarouselComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.images = this.route.snapshot.data['sliderImage'].images;
-    }
-
-    encode(object) {
-        return JSON.stringify(object.images);
+        this.images = this.route.snapshot.data['sliderImage'];
     }
 }
