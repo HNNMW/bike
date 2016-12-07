@@ -10,7 +10,7 @@
 
 <div class="enlarged-image" *ngIf="displayLargeImage">
     <img class="large-image" src="{{selectedImage.url}}" alt="{{selectedImage.title}}">
-    <div class="image-description" >
+    <div class="image-description" *ngIf="selectedImage.title || selectedImage.description">
         <h3 class="image-title">{{selectedImage.title}}</h3>
         <div class="image-description-text">{{selectedImage.description}}</div>
     </div>

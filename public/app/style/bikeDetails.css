@@ -51,3 +51,21 @@
     width: 70%;
     margin-left: 15%;
 }
+
+@media only screen and (max-width: 1024px) {
+    .main-image-container {
+        float: left;
+        width: 100%;
+    }
+
+    .list-image-container {
+        width: 100%;
+        max-height: none;
+    }
+
+    .list-image:hover {
+        cursor: default;
+        opacity: 1;
+        transform: scale(1);
+    }
+}

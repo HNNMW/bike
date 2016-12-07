@@ -1,4 +1,4 @@
-<div class="header-container">
+<div class="header-container" (window:scroll)="onScroll()" [ngClass]="{'hidden-header': hideHeader}">
     <div class="header-title"> STUCK IN STEEL
     </div>
 
@@ -16,5 +16,26 @@
     </div>
     <div class="header-item" routerLink="">
         HOME
+    </div>
+    <div class="mobile-header-item">
+        <i class="fa fa-bars pull-right" aria-hidden="true" (click)="toggleDropdown()"></i>
+        <div class="dropdown" [ngClass]="{'openDropdown': openDropdown}" (click)="toggleDropdown()">
+            <a routerLink="" class="dropdown-item">
+                <span>HOME</span>
+            </a>
+            <a routerLink="/bikes" class="dropdown-item">
+                <span>OUR BIKES</span>
+            </a>
+            <a routerLink="/gallery" class="dropdown-item">
+                <span>GALLERY</span>
+            </a>
+            <a class="dropdown-item">
+                <span>ABOUT US</span>
+            </a>
+            <a class="dropdown-item">
+                <span>CONTACT</span>
+            </a>
+        </div>
+
     </div>
 </div>

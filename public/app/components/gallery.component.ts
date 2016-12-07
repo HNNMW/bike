@@ -26,8 +26,10 @@ export class GalleryComponent implements OnInit {
 
     // Enlarge the selected image
     public enlargeImage = function (image: galleryImage) {
-        this.selectedImage = image;
-        this.displayLargeImage = true;
+        if (window.innerWidth > 1024) {
+            this.selectedImage = image;
+            this.displayLargeImage = true;
+        }
     }
 
     // Close the image which is currently enlarged

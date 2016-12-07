@@ -1,13 +1,12 @@
-
 <div class="bike-container">
     <div class="bike-item" *ngFor="let bike of bikes; let i = index">
-        <div class="image-container" [routerLink]="['/bike-details', bike.id]">
-            <img class="bike-img" src="/images/IMG_3542.jpg" alt="{{bike.title}}">
-        </div>
         <div class="bike-details" [ngClass]="{'pull-left': i%2 == 0}">
             <h2 class="bike-title">{{bike.title}}</h2>
             <span class="bike-description">{{bike.description}}</span>
-            <button class="bike-details-button" [routerLink]="['/bike-details', bike.id]">Check this bike out</button>
+            <button class="bike-details-button" [routerLink]="['/bike-details', 1]">Check this bike out</button>
+        </div>
+        <div class="image-container" [routerLink]="['/bike-details', image.id]">
+            <img class="bike-img" src="{{image.url}}" alt="{{image.title}}">
         </div>
     </div>
 </div>

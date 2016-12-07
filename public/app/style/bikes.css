@@ -4,6 +4,7 @@
     background-image: url("images/bakground-img.jpg");
     background-size: 100%;
     opacity: .92;
+    margin-top: 50px;
 }
 
 .bike-img{
@@ -68,16 +69,16 @@
 }
 
 /*Dit is een beetje vies, miss ooit nog veranderen*/
-@media screen and (max-width: 1330px) {
-    .bike-img{
-        height: 100%;
-        width: auto;
+@media screen and (max-width: 1460px) {
+    .bike-img {
+        margin-top: 0;
     }
 }
 
-@media screen and (max-width: 675px) {
+@media screen and (max-width: 1060px) {
     .image-container{
         width: 100%;
+        height: auto;
     }
 
     .bike-details{

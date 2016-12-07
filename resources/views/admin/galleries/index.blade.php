@@ -40,7 +40,8 @@
                                 </label>
                                 <div class="col-sm-10">
 
-                                    <input id="input-2" name="image" type="file" class="file" data-show-upload="false" data-show-caption="true">
+                                    <input id="input-2" name="image" type="file" class="file" data-show-upload="false"
+                                           data-show-caption="true">
 
                                 </div>
                             </div>
@@ -51,34 +52,14 @@
                             </div>
 
                         </form>
-    <div id="sortable">
-                            @foreach ($gallery_images as $gallery_image)
 
-                                    <div class="card sortable">
-
-                                        <img class="img-fluid" src="{{url(  $gallery_image->url) }}" alt="Card image cap">
-
-                                        <div class="card-block">
-
-                                            <h4 class="card-title">{{ $gallery_image->title }}</h4>
-
-                                            <p class="card-text">{{ $gallery_image->description }}</p>
-                                            <a href="{{ url('/admin/bikes/' . $gallery_image->id . '/edit') }}"><span
-                                                        class="glyphicon glyphicon-edit"></span></a> | <a
-                                                    href="{{ url('/admin/bikes/' . $gallery_image->id . '/destroy') }}"><span
-                                                        class="glyphicon glyphicon-trash"></a>
-                                        </div>
-
-                                    </div>
-                            @endforeach
-</div>
-
-                    </>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    @endsection
+@endsection
+
 @section('javascript')
     <script>
         $(document).ready(function () {

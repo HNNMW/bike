@@ -1,11 +1,12 @@
-.gallery-container{
+.gallery-container {
     width: 100%;
     position: absolute;
     z-index: 1;
     opacity: 0.92;
+    margin-top: 50px;
 }
 
-.gallery-container::before{
+.gallery-container::before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -16,7 +17,7 @@
     background-image: url(images/bakground-img.jpg);
 }
 
-.background{
+.background {
     height: 100%;
     width: 100%;
     background-color: #36393e;
@@ -25,17 +26,18 @@
     opacity: 0.7;
 }
 
-.faded-background{
+.faded-background {
     opacity: 0.92;
     background-color: black;
     z-index: 1;
 }
 
-.center-container{
+.center-container {
     width: 75%;
     margin: auto;
 }
-.gallery-item{
+
+.gallery-item {
     float: left;
     width: 24vw;
     height: 24vw;
@@ -46,14 +48,14 @@
     background-color: #c1c4c9;
 }
 
-.gallery-image{
+.gallery-image {
     max-height: 100%;
     margin-left: -5.5vw;
     transition: 0.75s ease;
     cursor: pointer;
 }
 
-.gallery-image:hover{
+.gallery-image:hover {
     opacity: 0.8;
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
@@ -62,12 +64,12 @@
     -ms-transform: scale(1.05);
 }
 
-.title{
+.title {
     color: #c1c4c9;
     font-family: "Copperplate Gothic Bold";
 }
 
-.enlarged-image{
+.enlarged-image {
     text-align: center;
     top: 50%;
     transform: translateY(-50%);
@@ -77,11 +79,11 @@
     margin-left: 20%;
 }
 
-.large-image{
+.large-image {
     width: 100%;
 }
 
-.image-description{
+.image-description {
     background-color: black;
     width: 100%;
     position: fixed;
@@ -91,16 +93,44 @@
     transition: 1s ease;
 }
 
-.enlarged-image:hover  .image-description{
+.enlarged-image:hover .image-description {
     transition: 1.0s ease;
     opacity: 0.9;
 }
 
-.image-title{
+.image-title {
     font-family: "Copperplate Gothic Bold";
 }
 
-.image-description-text{
+.image-description-text {
     width: 80%;
     margin-left: 10%;
+}
+
+@media screen and (max-width: 1024px) {
+    .center-container {
+        width: 100%;
+    }
+
+    .gallery-item {
+        width: 100%;
+        height: auto;
+        overflow: auto;
+        margin-left: 0;
+    }
+
+    .gallery-image {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .gallery-image:hover {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+        -ms-transform: scale(1);
+    }
+
 }
