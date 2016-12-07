@@ -1,4 +1,5 @@
 <div class="carousel">
+    {{ encode(images) }}
     <ul class="slides">
         <li *ngFor="let image of images">
             <img src="{{image.url}}" alt="">
