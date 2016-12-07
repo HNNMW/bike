@@ -11,7 +11,7 @@ import {BikeDetailsComponent} from "./components/bikeDetails.component";
 import {FooterComponent} from "./components/footer.component";
 import {AboutComponent} from "./components/about.component";
 import {OrderBy} from "./pipes/orderBy";
-
+import {ContactComponent} from "./components/contact.component";
 
 @NgModule({
     imports: [BrowserModule,
@@ -21,7 +21,7 @@ import {OrderBy} from "./pipes/orderBy";
             { path: 'bike-details/:id', component: BikeDetailsComponent },
             { path: 'gallery', component: GalleryComponent }
         ])],
-    declarations: [AppComponent, HeaderComponent, CarouselComponent, HomeComponent, BikesComponent, GalleryComponent, BikeDetailsComponent, FooterComponent, AboutComponent, OrderBy],
+    declarations: [AppComponent, HeaderComponent, CarouselComponent, HomeComponent, BikesComponent, GalleryComponent, BikeDetailsComponent, FooterComponent, AboutComponent, OrderBy, ContactComponent],
     bootstrap: [AppComponent]
 })
 

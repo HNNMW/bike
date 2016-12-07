@@ -1,0 +1,40 @@
+.contact-container{
+    min-height: 1000px;
+}
+
+.background-image{
+    background-image: url(images/IMG_3554.JPG);
+    height: 100%;
+    opacity: .8;
+    transition: 0.8s ease;
+}
+
+.input-focused{
+    opacity: .9;
+}
+
+.contact-title{
+    color: #2e3136;
+    text-align: center;
+    font-size: 90px;
+    font-family: copperplate;
+}
+
+.contact-text-container{
+    position: absolute;
+    top: 2000px;
+    width: 100%;
+}
+
+.input-field{
+    width: 45%;
+    margin-left: 27.5%;
+    opacity: .7;
+    margin-top: 20px;
+    padding-left:0;
+    padding-top:0;
+}
+
+.input-field:focus + .contact-title{
+    color: green;
+}

@@ -1,0 +1,12 @@
+<div class="contact-container">
+    <div class="background-image"  [ngClass]="{'input-focused': selectedInput}">
+    </div>
+    <div class="contact-text-container">
+        <h1 class="contact-title">CONTACT</h1>
+        <p>If you have any questions or if you want to buy one of our amazing bikes please don't hesitate to contact
+            us.</p>
+        <input class="input-field" placeholder="Name"  (click)="selectedInput = true">
+        <input class="input-field" placeholder="Email" (click)="selectedInput = true">
+        <input type="text-area" class="input-field" placeholder="Message" style="height: 170px" (click)="selectedInput = true" (blur)="selectedInput = false">
+    </div>
+</div>
