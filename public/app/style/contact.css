@@ -1,16 +1,11 @@
 .contact-container{
     min-height: 1000px;
-}
-
-.background-image{
     background-image: url(images/IMG_3554.JPG);
-    height: 100%;
-    opacity: .8;
     transition: 0.8s ease;
 }
 
 .input-focused{
-    opacity: .9;
+    -webkit-filter: sepia(50%);
 }
 
 .contact-title{
@@ -20,19 +15,44 @@
     font-family: copperplate;
 }
 
+.contact-info{
+    width: 80%;
+    margin-left: 10%;
+    font-size: 26px;
+    text-align: center;
+    font-weight: 700;
+}
+
 .contact-text-container{
     position: absolute;
-    top: 2000px;
     width: 100%;
 }
 
-.input-field{
+.input-container{
     width: 45%;
     margin-left: 27.5%;
+}
+
+.input-field{
+    width: 100%;
     opacity: .7;
     margin-top: 20px;
-    padding-left:0;
-    padding-top:0;
+}
+
+.input-button{
+    float: right;
+    margin-top: 15px;
+    background-color: #2e3136;
+    height: 50px;
+    width: 150px;
+    border: none;
+    color: #c1c4c9;
+    transition: 0.5s ease;
+}
+
+.input-button:hover{
+    color: #2e3136;
+    background-color: #c1c4c9;
 }
 
 .input-field:focus + .contact-title{

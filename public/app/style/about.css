@@ -4,13 +4,14 @@
     background-image: url("images/bakground-img.jpg");
     background-size: 100%;
     opacity: .92;
+    height: 775px;
 }
 
 .background {
     opacity: .7;
     background-color: #36393e;
-    height: 700px;
     text-align: center;
+    height: 100%;
 }
 
 .about-title{
@@ -27,7 +28,7 @@
 
 .about-text{
     width: 50%;
-    float: left;
+    margin-left: 25%;
 }
 
 .about-image {
@@ -37,4 +38,11 @@
     -ms-transform: rotate(90deg); /* IE 9 */
     -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
     transform: rotate(90deg);
+}
+
+@media only screen and (max-width: 1024px) {
+    .about-text{
+        width: 80%;
+        margin-left: 10%;
+    }
 }
