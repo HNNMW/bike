@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {bikeImage} from '../interfaces/bikeImage.interface'
+import {Component, OnInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -7,60 +7,15 @@ import {bikeImage} from '../interfaces/bikeImage.interface'
     styleUrls: ['app/style/bikes.css'],
     templateUrl: '/app/views/bikes.html',
 })
-export class BikesComponent {
+export class BikesComponent implements OnInit {
+    public bikes;
 
-    public images = images;
+    constructor(
+        private route: ActivatedRoute
+    ) {}
 
-
-}
-
-var images: bikeImage[] = [
-    {
-        "id": 1,
-        "url": "/images/IMG_3415.jpg",
-        title: "BLAUWE SUPER FIETS",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quamdui, varius non ipsum nec, sagittis varius mi. Mauris id faucibus sapien, ac pretium elit. "
-    },
-    {
-        "id": 2,
-        "url": "/images/IMG_3370.jpg",
-        title: "BLAUWE SUPER FIETS",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quam dui, varius non ipsum nec, sagittis varius mi. Mauris id faucibus sapien, ac pretium elit. Integer venenatis, ex vitae venenatis faucibus, orci dui posuere lectus, in congue lacus orci a orci. Sed vel dictum urna, id consequat est. "
-    },
-    {
-        "id": 3,
-        "url": "/images/IMG_3415.jpg",
-        title: "BLAUWE SUPER FIETS",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quamdui, varius non ipsum nec, sagittis varius mi. Mauris id faucibus sapien, ac pretium elit. "
-    },
-    {
-        "id": 4,
-        "url": "/images/IMG_3370.jpg",
-        title: "BLAUWE SUPER FIETS",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quamdui, varius non ipsum nec, sagittis varius mi. Mauris id faucibus sapien, ac pretium elit. "
-    },
-    {
-        "id": 5,
-        "url": "/images/IMG_3415.jpg",
-        title: "BLAUWE SUPER FIETS",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quamdui, varius non ipsum nec, sagittis varius mi. Mauris id faucibus sapien, ac pretium elit. "
-    },
-    {
-        "id": 6,
-        "url": "/images/IMG_3370.jpg",
-        title: "BLAUWE SUPER FIETS",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quam dui, varius non ipsum nec, sagittis varius mi. Mauris id faucibus sapien, ac pretium elit. Integer venenatis, ex vitae venenatis faucibus, orci dui posuere lectus, in congue lacus orci a orci. Sed vel dictum urna, id consequat est. "
-    },
-    {
-        "id": 7,
-        "url": "/images/IMG_3415.jpg",
-        title: "BLAUWE SUPER FIETS",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quamdui, varius non ipsum nec, sagittis varius mi. Mauris id faucibus sapien, ac pretium elit. "
-    },
-    {
-        "id": 8,
-        "url": "/images/IMG_3370.jpg",
-        title: "BLAUWE SUPER FIETS",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quamdui, varius non ipsum nec, sagittis varius mi. Mauris id faucibus sapien, ac pretium elit. "
+    ngOnInit() {
+        let bikeObject = this.route.snapshot.data['bike'];
+        this.bikes = bikeObject.bikes;
     }
-];
+}

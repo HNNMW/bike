@@ -1,24 +1,21 @@
 /**
  * Created by Bob on 8-10-2016.
  */
-import { Component, ElementRef, ViewChild, OnInit} from '@angular/core';
-import { carouselImage } from '../interfaces/carouselImage.interface';
-import { RouterModule }   from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute}   from '@angular/router';
 
 @Component({
     selector: 'carousel',
     styleUrls: ['app/style/carousel.css'],
     templateUrl: '/app/views/carousel.html',
 })
-export class CarouselComponent {
-    public images = images;
+export class CarouselComponent implements OnInit {
+    public sliderImages;
+
+    constructor(private route: ActivatedRoute) {
+    }
+
+    ngOnInit() {
+        this.sliderImages = this.route.snapshot.data['sliderImage'];
+    }
 }
-
-var images: carouselImage[] = [
-    { "url": "/images/IMG_3370.jpg" },
-    { "url": "/images/IMG_3377.jpg" },
-    { "url": "/images/IMG_3619.jpg" },
-    { "url": "/images/IMG_3607.jpg" },
-    { "url": "/images/IMG_3564.jpg" }
-];
-

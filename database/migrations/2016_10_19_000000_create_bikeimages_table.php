@@ -18,7 +18,7 @@ class CreateBikeImagesTable extends Migration
             $table->increments('id');
             $table->string('url');
             $table->integer('sort');
-            $table->unsignedInteger('bikeId');
+            $table->unsignedInteger('bikeId')->nullable();
         });
     }
 
