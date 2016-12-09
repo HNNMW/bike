@@ -19,7 +19,7 @@ class GalleryController extends Controller
     {
         $images = GalleryImage::orderBy('sort')->get();
 
-        return response()->json(['images' => $images]);
+        return response()->json($images);
     }
 
     /**

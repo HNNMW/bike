@@ -18,7 +18,7 @@ class BikeController extends Controller
     public function index()
     {
         $bikes = Bike::with('images')->orderBy('bikes.sort')->get();
-        return response()->json(['bikes' => $bikes]);
+        return response()->json($bikes);
     }
 
     /**

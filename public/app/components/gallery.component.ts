@@ -21,7 +21,7 @@ export class GalleryComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.images= this.route.snapshot.data['galleryImage'];
+        this.images = this.route.snapshot.data['galleryImage'];
     }
 
     // Enlarge the selected image

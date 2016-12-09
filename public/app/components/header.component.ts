@@ -14,6 +14,7 @@ export class HeaderComponent {
     }
 
     onScroll() {
+
         if (window.scrollY > 50)
             this.hideHeader = true;
 
