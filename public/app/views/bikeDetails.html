@@ -1,24 +1,11 @@
-<div [ngClass]="{'main-image-container': image.order == 1, 'list-image-container' : image.order > 1}"
-     *ngFor="let image of images | orderBy : ['order']" (click)="changeImage(image.id)">
-    <img src="{{image.url}}" [ngClass]="{'main-image': image.order == 1, 'list-image' : image.order > 1}">
+<div [ngClass]="{'main-image-container': image.sort == 0, 'list-image-container' : image.sort > 0}" (click)="changeImage(image.id)"
+     *ngFor="let image of images | orderBy : ['sort']">
+    <img src="{{image.url}}" [ngClass]="{'main-image': image.sort == 0, 'list-image' : image.sort > 0}">
 </div>
 <div class="description-container">
     <div class="background">
-        <div class="title">Dikke mooie vette bike gek</div>
-        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent est ante, fermentum ac orci ac, tempus
-            tristique justo. Suspendisse a arcu pulvinar, sodales tellus id, tincidunt ante. Cras ullamcorper lacus
-            tortor, at maximus purus tincidunt eget. Ut pellentesque elementum efficitur. Integer molestie nibh massa,
-            sit amet porta risus tincidunt euismod. Vestibulum feugiat laoreet faucibus. Proin at suscipit justo. Nam
-            hendrerit venenatis magna id maximus. Cras mattis diam ac est semper hendrerit. Nam est libero, egestas et
-            convallis ut, volutpat vel ante. Suspendisse ultricies leo et odio luctus elementum. Etiam in mi nec dui
-            sodales lacinia non id enim.
-
-            Donec mollis vel nisl a blandit. Donec quis tincidunt velit, quis imperdiet lorem. Nulla consectetur
-            eleifend ipsum sed pretium. Nam vitae sem nec tellus aliquam fringilla eget vitae diam. Nulla gravida dui
-            vel posuere bibendum. Nullam scelerisque ante eget magna viverra rhoncus. Aliquam erat volutpat. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut id mauris sed erat dignissim
-            sodales. Ut pretium, dui et eleifend sollicitudin, ex libero pulvinar nibh, eget semper metus tortor ut
-            nibh.
+        <div class="title">{{bike.title}}</div>
+        <div class="description">{{bike.description}}
         </div>
     </div>
 </div>

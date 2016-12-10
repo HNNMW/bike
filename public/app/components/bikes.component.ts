@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
     styleUrls: ['app/style/bikes.css'],
     templateUrl: '/app/views/bikes.html',
 })
+
 export class BikesComponent implements OnInit {
     public bikes;
 

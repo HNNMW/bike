@@ -11,13 +11,20 @@ import {Resolve, ActivatedRouteSnapshot, RouterStateSnapshot} from "@angular/rou
 
 @Injectable()
 export class BikeResolver implements Resolve<Bike> {
+    public bikes;
+
     constructor(private http: Http) {
     }
 
     resolve(route: ActivatedRouteSnapshot,
             state: RouterStateSnapshot): Observable<any>|Promise<any>|any {
         return this.http.get('/api/bikes').map((res: Response) => {
-            return res.json();
+            this.bikes = res.json();
+            return this.bikes;
         });
     }
+
+    public getBikebyId(id : number){
+        return this.bikes.find(bikes => bikes.id == id);
+    };
 }
