@@ -19,7 +19,8 @@ export class AppComponent implements OnInit {
             if (!(evt instanceof NavigationEnd)) {
                 return;
             }
-            document.body.scrollTop = 0;
+            if (window.location.href.indexOf("contact") == -1 && window.location.href.indexOf("contact") == -1)
+                 document.body.scrollTop = 0;
         });
     }
 

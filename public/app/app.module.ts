@@ -26,6 +26,16 @@ import {ContactComponent} from "./components/contact.component";
             }
             },
             {
+                path: 'about', component: HomeComponent, resolve: {
+                sliderImage: SliderImageResolver
+            }
+            },
+            {
+                path: 'contact', component: HomeComponent, resolve: {
+                sliderImage: SliderImageResolver
+            }
+            },
+            {
                 path: 'bikes', component: BikesComponent, resolve: {
                 bike: BikeResolver
             }

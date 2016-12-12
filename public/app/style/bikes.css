@@ -1,10 +1,18 @@
 .bike-container{
     width: 100%;
     color: #c1c4c9;
-    background-image: url("images/bakground-img.jpg");
+    background-image: url("images/background-image.jpg");
     background-size: 100%;
     opacity: .92;
     margin-top: 50px;
+}
+
+.bike-item{
+    border-bottom: 5px solid #2e3136;
+}
+
+.no-border{
+    border-bottom: none;
 }
 
 .bike-img{
@@ -21,7 +29,7 @@
 }
 
 .bike-details{
-    float: right;
+    float: left;
     width: 50%;
     height: 350px;
     position: relative;

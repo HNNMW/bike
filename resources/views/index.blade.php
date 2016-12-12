@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>STUCK IN STEEL</title>
+    <title>STUCKINSTEEL</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/css/font-awesome.min.css" rel="stylesheet">

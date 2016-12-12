@@ -1,18 +1,18 @@
 <div class="header-container" (window:scroll)="onScroll()" [ngClass]="{'hidden-header': hideHeader}">
-    <div class="header-title"> STUCK IN STEEL
+    <div class="header-title" routerLink=""> STUCKINSTEEL
     </div>
 
-    <div class="header-item">
+    <div class="header-item"  routerLink="/contact">
         CONTACT
     </div>
-    <div class="header-item">
+    <div class="header-item"  routerLink="/about">
         ABOUT US
     </div>
     <div class="header-item" routerLink="/gallery">
        GALLERY
     </div>
     <div class="header-item" routerLink="/bikes">
-        OUR BIKES
+        PRODUCTS
     </div>
     <div class="header-item" routerLink="">
         HOME
@@ -24,15 +24,15 @@
                 <span>HOME</span>
             </a>
             <a routerLink="/bikes" class="dropdown-item">
-                <span>OUR BIKES</span>
+                <span>PRODUCTS</span>
             </a>
             <a routerLink="/gallery" class="dropdown-item">
                 <span>GALLERY</span>
             </a>
-            <a class="dropdown-item">
+            <a routerLink="about" class="dropdown-item" class="dropdown-item">
                 <span>ABOUT US</span>
             </a>
-            <a class="dropdown-item">
+            <a routerLink="contact" class="dropdown-item" class="dropdown-item">
                 <span>CONTACT</span>
             </a>
         </div>

@@ -9,7 +9,5 @@ import { Component} from '@angular/core';
     templateUrl: '/app/views/contact.html',
 })
 export class ContactComponent {
-    public selectedInput = false;
-
 }
 
