@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Bike;
 use Illuminate\Http\Request;
-
+Use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -59,8 +59,10 @@ class BikeController extends Controller
      */
     public function show($id)
     {
-        //
+        $bike = Bike::with('images')->findOrFail($id);
+        return response()->json($bike);
     }
+
 
     /**
      * Show the form for editing the specified resource.
