@@ -29,6 +29,8 @@ Route::group(['namespace' => 'Api'], function () {
     Route::group(['prefix' => 'sliderimages'], function () {
         Route::get('/', 'SliderController@index');
     });
-
+    Route::group(['prefix' => 'contact'], function () {
+        Route::post('/mail', 'ContactController@mail');
+    });
 });
 

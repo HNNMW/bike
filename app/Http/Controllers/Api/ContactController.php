@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use App\Bike;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class BikeController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,19 +17,25 @@ class BikeController extends Controller
      */
     public function index()
     {
-        $bikes = Bike::with('images')->orderBy('bikes.sort')->get();
-        return response()->json($bikes);
+
     }
 
+    public function mail(Request $request)
+    {
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'textMessage' => $request->textMessage,
+        ];
 
+        Mail::send('contact.email', $data, function ($message) use ($data) {
+            $message->to('maiko1100@gmail.com', '')->subject('Email aanvraag');
+            $message->from('maiko@dqservicegroep.nl', 'StuckInSteel');
+        });
+        return response('succes');
 
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -48,7 +54,7 @@ class BikeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -59,7 +65,7 @@ class BikeController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
