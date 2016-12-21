@@ -1,13 +1,16 @@
 <div id="contact" class="contact-container">
     <div class="contact-text-container">
         <h1 class="contact-title">CONTACT</h1>
-        <p class="contact-info">If you have any questions or if you want to buy one of our amazing bikes please don't hesitate to contact
+        <p class="contact-info">If you have any questions or if you want to buy one of our amazing bikes please don't
+            hesitate to contact
             us.</p>
         <div class="input-container">
-        <input class="input-field" placeholder="Name">
-        <input class="input-field" placeholder="Email">
-        <input type="text-area" class="input-field" placeholder="Message" style="height: 170px">
-        <input type="button" value="Send message" class="input-button">
+            <input class="input-field" placeholder="Name" [ngModel]="name" (ngModelChange)="name = $event">
+            <input class="input-field" placeholder="Email" [ngModel]="email" (ngModelChange)="email = $event">
+            <textarea class="input-field" placeholder="Message" style="height: 170px" [ngModel]="textMessage" (ngModelChange)="textMessage = $event"> </textarea>
+            <button class="input-button" (click)="sendEmail()">Send message</button>
+            <div *ngIf="showErrorMessage" class="message-sent">It is not allowed to send a message with empty fields</div>
+            <div *ngIf="showSentMessage" class="message-sent">Your message has been sent</div>
         </div>
     </div>
 </div>
