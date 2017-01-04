@@ -10,7 +10,7 @@ import {Resolve, ActivatedRouteSnapshot, RouterStateSnapshot} from "@angular/rou
 
 
 @Injectable()
-export class BikeResolver implements Resolve<Bike> {
+export class BikeDetailResolver implements Resolve<Bike> {
     public bikes;
 
     constructor(private http: Http) {
@@ -18,17 +18,12 @@ export class BikeResolver implements Resolve<Bike> {
 
     resolve(route: ActivatedRouteSnapshot,
             state: RouterStateSnapshot): Observable<any>|Promise<any>|any {
-        return this.http.get('/api/bikes').map((res: Response) => {
-            this.bikes = res.json();
-            return this.bikes;
+        // return this.http.get('/api/bikes/bike' + route.params['id']).map((res: Response) => {
+        //    var test = res.json();
+        //     return test;
+        // });
+        return this.http.get('/api/bikes/bike/' + route.params['id']).map((res: Response) => {
+           return res.json();
         });
-    }
-
-    public getBikebyId(id: number) {
-        // if (this.bikes) {
-        if (this.bikes !== undefined)
-            return this.bikes.find(bikes => bikes.id == id);
-         else
-            return;
     }
 }

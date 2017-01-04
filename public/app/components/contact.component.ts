@@ -22,7 +22,6 @@ export class ContactComponent {
 
     public sendEmail() {
         var emailMessage = new EmailMessage(this.name, this.email, this.textMessage);
-        console.log(emailMessage);
 
         if (this.name === "" || this.email === "" || this.textMessage === "" || this.name === undefined || this.email === undefined || this.textMessage === undefined ) {
             this.showErrorMessage = true;

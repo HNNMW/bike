@@ -15,6 +15,7 @@ import {HttpModule} from '@angular/http';
 import {BikeResolver} from "./resolvers/bike.resolver";
 import {SliderImageResolver} from "./resolvers/sliderImage.resolver";
 import {GalleryImageResolver} from "./resolvers/galleryImage.resolver";
+import {BikeDetailResolver} from "./resolvers/bikeDetail.resolver";
 import {ContactComponent} from "./components/contact.component";
 import { FormsModule }   from '@angular/forms';
 import {EmailService} from "./Services/EmailService";
@@ -42,14 +43,18 @@ import {EmailService} from "./Services/EmailService";
                 bike: BikeResolver
             }
             },
-            {path: 'bike-details/:id', component: BikeDetailsComponent},
+            {
+                path: 'bike-details/:id', component: BikeDetailsComponent, resolve: {
+                bikeDetails: BikeDetailResolver
+            }
+            },
             {
                 path: 'gallery', component: GalleryComponent, resolve: {
                 galleryImage: GalleryImageResolver
             }
             }
         ])],
-    providers: [BikeResolver, SliderImageResolver, GalleryImageResolver, EmailService],
+    providers: [BikeResolver, SliderImageResolver, GalleryImageResolver, EmailService, BikeDetailResolver],
     declarations: [AppComponent, HeaderComponent, CarouselComponent, HomeComponent, BikesComponent, GalleryComponent, BikeDetailsComponent, FooterComponent, AboutComponent, OrderBy, ContactComponent],
     bootstrap: [AppComponent]
 })
