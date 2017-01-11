@@ -30,8 +30,8 @@ class ContactController extends Controller
         ];
 
         Mail::send('contact.email', $data, function ($message) use ($data) {
-            $message->to('bobvantpadje@gmail.com', '')->subject('Email aanvraag');
-            $message->from('maiko@dqservicegroep.nl', 'StuckInSteel');
+            $message->to('info@stuckinsteel.com', '')->subject('Email aanvraag');
+            $message->from('contact@stuckinsteel.com', 'StuckInSteel');
         });
         //return response('succes');
 
