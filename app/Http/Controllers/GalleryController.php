@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\GalleryImage as GalleryImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image as Image;
 use App\Http\Requests;
 
 class GalleryController extends Controller
@@ -31,6 +32,12 @@ class GalleryController extends Controller
             $gallery_image->move(
                     'images/galleryImages/', $imageName
                 );
+
+            $img = Image::make( 'images/galleryImages/' . $imageName);
+            $img->resize(1920, 1280);
+            $img->save('images/sliderImages/' . $imageName);
+
+
             $gallery_image = new GalleryImage();
             $gallery_image->title = $request->input('title');
             $gallery_image->description = $request->input('description');

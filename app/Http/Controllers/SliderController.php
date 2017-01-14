@@ -6,6 +6,7 @@ use App\SliderImage as SliderImage;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image as Image;
 use App\Http\Requests;
 
 class SliderController extends Controller
@@ -38,6 +39,10 @@ class SliderController extends Controller
             $value->move(
                 'images/sliderImages/', $imageName
             );
+            $img = Image::make( 'images/sliderImages/' . $imageName);
+            $img->resize(1920, 1280);
+            $img->save('images/sliderImages/' . $imageName);
+
             $slider_image = new SliderImage();
             $slider_image->url = 'images/sliderImages/'.$imageName;
             $slider_image->sort = 0;

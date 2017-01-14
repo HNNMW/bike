@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Bike as Bike;
 use App\BikeImage as BikeImage;
 use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image as Image;
 
 class BikeController extends Controller
 {
@@ -55,6 +56,11 @@ class BikeController extends Controller
                 $bike_image->move(
                     'images/bikeImages/', $imageName
                 );
+
+                $img = Image::make( 'images/bikeImages/' . $imageName);
+                $img->resize(1920, 1280);
+                $img->save('images/sliderImages/' . $imageName);
+
                 $bikeImage = new BikeImage;
                 $bikeImage->url = 'images/bikeImages/' . $imageName;
                 $bikeImage->bikeId = $bike->id;
