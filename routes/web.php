@@ -39,6 +39,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::post('/updateSort', 'GalleryController@updateSort');
         Route::post('/{id}/update', 'GalleryController@update');
         Route::get('/{id}/destroy', 'GalleryController@destroy');
+        Route::get('/create', 'GalleryController@create');
         Route::post('/store', 'GalleryController@store');
     });
 

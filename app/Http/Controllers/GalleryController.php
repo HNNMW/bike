@@ -59,4 +59,29 @@ class GalleryController extends Controller
         return view('admin.galleries.index')->with(compact('gallery_images'));
 
     }
+
+    public function updateSort(Request $request)
+    {
+        $gallery_order = $request->input('gallery_order');
+        $gallery_order = json_decode($gallery_order);
+
+        $index = 1;
+
+        foreach ($gallery_order as $order => $value) {
+
+            $id = (int)$value;
+            $gallery_image = SliderImage::find($id);
+            $gallery_image->sort = $order;
+            $gallery_image->save();
+            $index++;
+        }
+
+        return 'test';
+    }
+
+    public function create () {
+
+        return view('admin.galleries.create');
+    }
+
 }
