@@ -70,7 +70,7 @@ class GalleryController extends Controller
         foreach ($gallery_order as $order => $value) {
 
             $id = (int)$value;
-            $gallery_image = SliderImage::find($id);
+            $gallery_image = GalleryImage::find($id);
             $gallery_image->sort = $order;
             $gallery_image->save();
             $index++;
