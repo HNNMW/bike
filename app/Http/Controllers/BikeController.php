@@ -58,8 +58,8 @@ class BikeController extends Controller
                 );
 
                 $img = Image::make( 'images/bikeImages/' . $imageName);
-                $img->resize(1920, 1280);
-                $img->save('images/sliderImages/' . $imageName);
+                $img->resize(1536 , 1024);
+                $img->save('images/bikeImages/' . $imageName);
 
                 $bikeImage = new BikeImage;
                 $bikeImage->url = 'images/bikeImages/' . $imageName;

@@ -34,8 +34,8 @@ class GalleryController extends Controller
                 );
 
             $img = Image::make( 'images/galleryImages/' . $imageName);
-            $img->resize(1920, 1280);
-            $img->save('images/sliderImages/' . $imageName);
+            $img->resize(1536 , 1024);
+            $img->save('images/galleryImages/' . $imageName);
 
 
             $gallery_image = new GalleryImage();
