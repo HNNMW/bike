@@ -53,7 +53,7 @@ class GalleryController extends Controller
     public function destroy($id)
     {
         $gallery_image = GalleryImage::find($id);
-
+        File::delete($gallery_image->url);
         $gallery_image->delete();
         $gallery_images = GalleryImage::orderBy('sort')->get();
         return view('admin.galleries.index')->with(compact('gallery_images'));

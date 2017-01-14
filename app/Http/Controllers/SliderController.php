@@ -55,7 +55,7 @@ class SliderController extends Controller
     public function destroy($id)
     {
         $slider_image = SliderImage::find($id);
-
+        File::delete($slider_image->url);
         $slider_image->delete();
         $slider_images = SliderImage::orderBy('sort')->get();
         return view('admin.sliders.index')->with(compact('slider_images'));
