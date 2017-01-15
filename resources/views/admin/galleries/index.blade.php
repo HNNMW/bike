@@ -6,18 +6,18 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Bikes</div>
+                    <div class="panel-heading">Gallery images</div>
 
                     <div class="panel-body">
                         <a type="btn" href="{{ url('/admin/galleries/create') }}"><span
                                     class="glyphicon glyphicon-download"></a>
-                        <h1> All bikes </h1>
+                        <h1> All Gallery images </h1>
                         <div class="row">
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>id</th>
-                                    <th></th>
+                                    <th>Foto</th>
+                                    <th>Edit</th>
                                 </tr>
                                 </thead>
                                 <tbody id="sortable">
