@@ -17,7 +17,7 @@ import {SliderImageResolver} from "./resolvers/sliderImage.resolver";
 import {GalleryImageResolver} from "./resolvers/galleryImage.resolver";
 import {BikeDetailResolver} from "./resolvers/bikeDetail.resolver";
 import {ContactComponent} from "./components/contact.component";
-import { FormsModule }   from '@angular/forms';
+import {FormsModule}   from '@angular/forms';
 import {EmailService} from "./Services/EmailService";
 
 @NgModule({

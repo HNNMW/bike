@@ -23,9 +23,9 @@ export class ContactComponent {
     public sendEmail() {
         var emailMessage = new EmailMessage(this.name, this.email, this.textMessage);
 
-        if (this.name === "" || this.email === "" || this.textMessage === "" || this.name === undefined || this.email === undefined || this.textMessage === undefined ) {
+        if (this.name === "" || this.email === "" || this.textMessage === "" || this.name === undefined || this.email === undefined || this.textMessage === undefined)
             this.showErrorMessage = true;
-        } else {
+        else {
             this.emailService.sendEmail(emailMessage);
             this.showErrorMessage = false;
             this.showSentMessage = true;

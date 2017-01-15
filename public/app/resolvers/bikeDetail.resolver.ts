@@ -18,12 +18,8 @@ export class BikeDetailResolver implements Resolve<Bike> {
 
     resolve(route: ActivatedRouteSnapshot,
             state: RouterStateSnapshot): Observable<any>|Promise<any>|any {
-        // return this.http.get('/api/bikes/bike' + route.params['id']).map((res: Response) => {
-        //    var test = res.json();
-        //     return test;
-        // });
         return this.http.get('/api/bikes/bike/' + route.params['id']).map((res: Response) => {
-           return res.json();
+            return res.json();
         });
     }
 }
