@@ -1,3 +1,8 @@
+@font-face {
+    font-family: stuckinsteel;
+    src: url(../fonts/CopperplateGothicBoldRegular.ttf)
+}
+
 .about-container {
     width: 100%;
     color: #c1c4c9;
@@ -18,7 +23,7 @@
     width: 100%;
     font-size: 35px;
     padding-top: 20px;
-    font-family: "Copperplate Gothic Bold";
+    font-family: stuckinsteel;
 }
 
 .about-content{

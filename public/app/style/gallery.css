@@ -1,3 +1,8 @@
+@font-face {
+    font-family: stuckinsteel;
+    src: url(../fonts/CopperplateGothicBoldRegular.ttf)
+}
+
 .gallery-container {
     width: 100%;
     position: absolute;
@@ -72,7 +77,7 @@
 
 .title {
     color: #c1c4c9;
-    font-family: "Copperplate Gothic Bold";
+    font-family: stuckinsteel;
 }
 
 .enlarged-image {
@@ -105,7 +110,7 @@
 }
 
 .image-title {
-    font-family: "Copperplate Gothic Bold";
+    font-family: stuckinsteel;
 }
 
 .image-description-text {

@@ -1,9 +1,14 @@
+@font-face {
+    font-family: stuckinsteel;
+    src: url(../fonts/CopperplateGothicBoldRegular.ttf)
+}
+
 .header-container {
     width: 100%;
     background: #2e3136;
     color: #c1c4c9;
     height: 50px;
-    font-family: "Copperplate Gothic Bold";
+    font-family: stuckinsteel;
     position: fixed;
     z-index: 2;
     opacity: 1;

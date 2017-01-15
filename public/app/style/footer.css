@@ -1,3 +1,8 @@
+@font-face {
+    font-family: stuckinsteel;
+    src: url(../fonts/CopperplateGothicBoldRegular.ttf)
+}
+
 .footer-container{
     height: 80px;
     background-color: #2e3136;
@@ -18,7 +23,7 @@
 }
 
 .footer-title {
-    font-family: Copperplate Gothic Bold;
+    font-family: stuckinsteel;
     padding-bottom: 3px;
     margin-top: 3px;
     font-weight: 700;
