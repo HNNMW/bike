@@ -11,9 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class BikesComponent implements OnInit {
     public bikes;
 
-    constructor(
-        private route: ActivatedRoute
-    ) {}
+    constructor(private route: ActivatedRoute) {}
 
     ngOnInit() {
         this.bikes = this.route.snapshot.data['bike'];

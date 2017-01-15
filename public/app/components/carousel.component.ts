@@ -12,8 +12,7 @@ import {ActivatedRoute}   from '@angular/router';
 export class CarouselComponent implements OnInit {
     public images;
 
-    constructor(private route: ActivatedRoute) {
-    }
+    constructor(private route: ActivatedRoute) {    }
 
     ngOnInit() {
         this.images = this.route.snapshot.data['sliderImage'];

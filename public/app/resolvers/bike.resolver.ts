@@ -25,7 +25,6 @@ export class BikeResolver implements Resolve<Bike> {
     }
 
     public getBikebyId(id: number) {
-        // if (this.bikes) {
         if (this.bikes !== undefined)
             return this.bikes.find(bikes => bikes.id == id);
          else

@@ -1,14 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {User} from "../model/user.model";
-import {Router, NavigationEnd, NavigationStart} from "@angular/router";
+import {Component, OnInit, enableProdMode} from '@angular/core';
+import {Router, NavigationEnd} from "@angular/router";
+enableProdMode();
 
 @Component({
     selector: 'bike-app',
     templateUrl: '/app/views/index.html'
 })
 export class AppComponent implements OnInit {
-
-    testObject = new User();
 
     public constructor(private router: Router) {
 
