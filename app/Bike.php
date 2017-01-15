@@ -23,7 +23,7 @@ class Bike extends Model
    */
   public function images()
   {
-      return $this->hasMany('App\BikeImage', 'bikeId');
+      return $this->hasMany('App\BikeImage', 'bikeId')->orderBy('sort');
   }
 
 }

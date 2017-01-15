@@ -43,6 +43,27 @@
 
                                 </div>
                             </div>
+                            <div class="row">
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="sortable">
+                                    @foreach ($bike->images  as $bike_image)
+                                        <tr id="{{ $bike_image->id }}" class="ui-state-default items">
+                                            <td><img src="{{ url( $bike_image->url )}}" alt="" border=3 height=100 width=150></img></td>
+                                            <td>
+                                                <a href="{{ url('/admin/bikes/' . $bike_image->id . '/destroyImage') }}"><span
+                                                            class="glyphicon glyphicon-trash"></a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2">
@@ -58,5 +79,49 @@
             </div>
         </div>
     </div>
+
+@endsection
+@section('javascript')
+    <script>
+        $(document).ready(function () {
+
+            var fixHelper = function (e, ui) {
+                ui.children().each(function () {
+                    $(this).width($(this).width());
+                });
+                return ui;
+            };
+
+            $('#sortable').sortable({
+                items: '.items',
+                helper: fixHelper,
+                update: function (event, ui) {
+                    var bike_image_order = $(this).sortable('toArray', {attribute: 'id'});
+                    var jsondata = JSON.stringify(bike_image_order);
+
+
+                    $.ajax({
+                        data: {
+                            "bike_image_order": jsondata,
+                        },
+                        type: 'POST',
+                        url: '/admin/bikes/updateImageSort',
+
+                    })
+                }
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        });
+    </script>
 
 @endsection

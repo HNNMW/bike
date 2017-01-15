@@ -163,6 +163,24 @@ class BikeController extends Controller
 
         return 'test';
     }
+    public function updateImageSort(Request $request)
+    {
+        $bike_image_order = $request->input('bike_image_order');
+        $bike_image_order = json_decode($bike_image_order);
+
+        $index = 1;
+
+        foreach ($bike_image_order as $bikeimageId => $value) {
+
+            $id = (int)$value;
+            $bikeImage = BikeImage::find($id);
+            $bikeImage->sort = $bikeimageId;
+            $bikeImage->save();
+            $index++;
+        }
+
+        return 'test';
+    }
 
     public function destroy($id)
     {
@@ -172,6 +190,17 @@ class BikeController extends Controller
         BikeImage::where('bikeId', $id)->delete();
         $bikes = Bike::orderBy('sort')->get();
         return view('admin.bikes.index')->with(compact('bikes'));
+
+    }
+    public function destroyImage($id)
+    {
+
+        $bikeImage = BikeImage::find($id);
+        $bikeId = $bikeImage->bikeId;
+        $bike = Bike::findOrFail($bikeId);
+        $bikeImage->delete();
+
+        return redirect('/admin/bikes/' . $bikeId . '/edit')->with(compact('bike'));
 
     }
 }

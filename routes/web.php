@@ -21,8 +21,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::group(['prefix' => 'bikes'], function () {
         Route::get('/', 'BikeController@index');
         Route::post('/updateSort', 'BikeController@updateSort');
+        Route::post('/updateImageSort', 'BikeController@updateImageSort');
         Route::get('/{id}/edit', 'BikeController@edit');
         Route::post('/{id}/update', 'BikeController@update');
+        Route::get('/{id}/destroyImage', 'BikeController@destroyImage');
         Route::get('/{id}/destroy', 'BikeController@destroy');
         Route::get('/create', 'BikeController@create');
         Route::post('/store', 'BikeController@store');

@@ -59,7 +59,7 @@ class BikeController extends Controller
      */
     public function show($id)
     {
-        $bike = Bike::with('images')->findOrFail($id);
+        $bike = Bike::with('images')->findOrFail($id)->orderBy('sort');
         return response()->json($bike);
     }
 
