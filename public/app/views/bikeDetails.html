@@ -1,6 +1,8 @@
+<div class="list-container">
 <div [ngClass]="{'main-image-container': image.sort == 0, 'list-image-container' : image.sort > 0}" (click)="changeImage(image.id)"
      *ngFor="let image of bike.images | orderBy : ['sort']">
     <img src="{{image.url}}" [ngClass]="{'main-image': image.sort == 0, 'list-image' : image.sort > 0}">
+</div>
 </div>
 <div class="description-container">
     <div class="background">
