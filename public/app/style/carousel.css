@@ -1,29 +1,40 @@
-.carousel{
-    overflow:hidden;
-    width:100%;
+.carousel {
+    overflow: hidden;
+    width: 100%;
     margin-top: 50px;
 }
-.slides{
-    list-style:none;
-    position:relative;
-    width:500%; /* Number of panes * 100% */
-    -moz-animation:carousel 80s infinite;
-    -webkit-animation:carousel 80s infinite;
-    animation:carousel 80s infinite;
+
+.carousel-image {
+    position: absolute;
+    width: 115px !important;
+    bottom: 60px;
+    left: 60px;
+    opacity: .8;
+
+}
+
+.slides {
+    list-style: none;
+    position: relative;
+    width: 500%; /* Number of panes * 100% */
+    -moz-animation: carousel 80s infinite;
+    -webkit-animation: carousel 80s infinite;
+    animation: carousel 80s infinite;
     padding-left: 0;
 }
 
-.slides > li{
-    position:relative;
-    float:left;
+.slides > li {
+    position: relative;
+    float: left;
     width: 20%; /* 100 / number of panes */
 }
-.carousel img{
-    display:block;
-    width:100%;
+
+.carousel img {
+    display: block;
+    width: 100%;
 }
 
-.social-media-icon-container{
+.social-media-icon-container {
     position: absolute;
     color: white;
     font-size: 60px;
@@ -31,13 +42,12 @@
     text-align: right;
 }
 
-.social-media-icon-container a{
+.social-media-icon-container a {
     color: white;
     text-decoration: none;
 }
 
-
-.social-media-icon{
+.social-media-icon {
     margin-left: 10px;
     transition: 1s;
     transition: 0.3s;
@@ -64,37 +74,70 @@
 }
 
 @media only screen and (max-width: 1024px) {
-    .social-media-icon:hover{
+    .social-media-icon:hover {
         color: white !important;
         font-size: 60px !important;
     }
 }
 
-
 @media screen and (max-width: 750px) {
-    .social-media-icon-container{
+    .social-media-icon-container {
         display: none;
     }
 }
 
-@keyframes carousel{
-    0%    { left:0%; }
-    11%   { left:0%; }
-    12.5% { left:-100%; }
-    23.5% { left:-100%; }
-    25%   { left:-200%; }
-    36%   { left:-200%; }
-    37.5% { left:-300%; }
-    48.5% { left:-300%; }
-    50%   { left:-400%; }
-    61%   { left:-400%; }
-    62.5% { left:-300%; }
-    73.5% { left:-300%; }
-    75%   { left:-200%; }
-    86%   { left:-200%; }
-    87.5% { left:-100%; }
-    98.5% { left:-100%; }
-    100%  { left:0%; }
+@keyframes carousel {
+    0% {
+        left: 0%;
+    }
+    11% {
+        left: 0%;
+    }
+    12.5% {
+        left: -100%;
+    }
+    23.5% {
+        left: -100%;
+    }
+    25% {
+        left: -200%;
+    }
+    36% {
+        left: -200%;
+    }
+    37.5% {
+        left: -300%;
+    }
+    48.5% {
+        left: -300%;
+    }
+    50% {
+        left: -400%;
+    }
+    61% {
+        left: -400%;
+    }
+    62.5% {
+        left: -300%;
+    }
+    73.5% {
+        left: -300%;
+    }
+    75% {
+        left: -200%;
+    }
+    86% {
+        left: -200%;
+    }
+    87.5% {
+        left: -100%;
+    }
+    98.5% {
+        left: -100%;
+    }
+    100% {
+        left: 0%;
+    }
 }
 
 
