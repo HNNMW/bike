@@ -6,7 +6,7 @@
 
 .carousel-image {
     position: absolute;
-    width: 115px !important;
+    width: 10% !important;
     bottom: 60px;
     left: 60px;
     opacity: .8;
@@ -83,6 +83,11 @@
 @media screen and (max-width: 750px) {
     .social-media-icon-container {
         display: none;
+    }
+
+    .carousel-image{
+        bottom: 25px;
+        left: 25px;
     }
 }
 
