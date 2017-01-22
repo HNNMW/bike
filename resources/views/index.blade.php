@@ -22,6 +22,6 @@
     </head>
 <!-- 3. Display the application -->
 <body>
-<bike-app>Loading...</bike-app>
+<bike-app><div id="loading"><div class="loader">loading...</div></div></bike-app>
 </body>
 </html>
