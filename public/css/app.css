@@ -5777,10 +5777,10 @@ button.close {
 }
 
 .loader {
-  color: #000;
+  color: #2e3136;
   font-size: 20px;
   width: 15px;
-  top: 50vh;
+  top: 45vh;
   left: 50vw;
   height: 15px;
   border-radius: 50%;
